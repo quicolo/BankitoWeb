@@ -8,7 +8,14 @@ include TEMPLATES_PATH . '/index_header.php';
     <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Regístrate en Bankito</span>
 </div>
 
-<form class="w3-container" action="registrar.php" target="_blank">
+<?php
+if (isset($_SESSION['error_registro']))
+    echo implode("<br>", $_SESSION['error_registro']);
+else
+    echo 'No hay errores<br>';
+?>
+
+<form class="w3-container" method="post" action="registrar.php" target="_blank">
     <div class="w3-section">
         <label>Nombre</label>
         <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="nombre" required>
@@ -23,7 +30,7 @@ include TEMPLATES_PATH . '/index_header.php';
     </div>
     <div class="w3-section">
         <label>Email</label>
-        <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="email" name="Email" required>
+        <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="email" name="email" required>
     </div>
     <div class="w3-section">
         <label>Nombre de usuario</label>
@@ -31,9 +38,9 @@ include TEMPLATES_PATH . '/index_header.php';
     </div>
     <div class="w3-section">
         <label>Contraseña</label>
-        <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="password" name="Message" required>
+        <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="password" name="password" required>
     </div>
-    <button type="submit" class="w3-button w3-block w3-black">Enviar</button>
+    <button type="submit" name="enviar" class="w3-button w3-block w3-black">Enviar</button>
 </form>
 
 

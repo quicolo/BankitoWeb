@@ -1,10 +1,12 @@
 <?php
+
 require_once '../resources/config.php';
 
 // Recoger datos del formulario
 if (isset($_POST)) {
-    
-    // Recoger datos del formulario y validarlos para evitar la inyección de SQL
+
+    // Recoger datos del formulario y limpiamos de espacios el principio
+    // y final de las cadenas
     $usuarioForm = trim($_POST['usuario']);
     $passwordForm = trim($_POST['password']);
 
@@ -14,17 +16,19 @@ if (isset($_POST)) {
     if (isset($_SESSION['usuario'])) {
         unset($_SESSION['usuario']);
     }
-    
+
+    // Verificamos los caracteres permitidos en el nombre de usuario así como 
+    // el tamaño mínimo y máximo del nombre de usuario
     if (preg_match('/^[a-zA-Z0-9]{5,50}$/', $usuarioForm)) {
 
         // Consulta para comprobar las credenciales del usuario
         $query = "SELECT * FROM usuario WHERE nombre = '$usuarioForm'";
 
         $resultado = mysqli_query($dbConexion, $query);
-        
+
         if (isset($resultado) && mysqli_num_rows($resultado) == 1) {
             $arrayresult = mysqli_fetch_assoc($resultado);
-            var_dump($arrayresult);
+
             // Comprobar la contraseña
             $comprobacion = password_verify($passwordForm, $arrayresult['password']);
 
@@ -41,8 +45,8 @@ if (isset($_POST)) {
     } else {
         $_SESSION['error_login'] = "Usuario con caracteres prohibidos";
     }
-    
-    if (isset($_SESSION['usuario'])) 
+
+    if (isset($_SESSION['usuario']))
         header('Location: principal.php');
     else
         header('Location: iniciarsesion.php');
