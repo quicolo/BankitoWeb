@@ -5,13 +5,13 @@
 // Solo admite nombres que empiecen por letra, le siga de 6 a 22 letras o 
 // dígitos (\d) o guiones bajos _ y termine con una letra o dígito.
 function validaUsuario($nombre) {
-    return preg_match("#^[a-z][\da-z_]{6,22}[a-z\d]\$#i", $nombre);
+    return preg_match("#^[A-Za-z][\dA-Za-z_]{6,22}[A-Za-z\d]$#", $nombre);
 }
 
 // La expresión debe empezar y acabar utilizando exclusivamente letras
 // espacios o guiones.
 function validaNomApe($nombre) {
-    return preg_match('/^[a-z -]{2,20}$/i', $nombre);
+    return preg_match('#^[A-Za-z -áéíóúÁÉÍÓÚ]{2,20}$#', $nombre);
 }
 
 // Obliga al formato blah@blah.blah
@@ -39,6 +39,16 @@ function validaTelefono($numero) {
     return preg_match($reg, $numero);
 }
 
+function validaDNI($dni) {
+    $letra = substr($dni, -1);
+    $numeros = substr($dni, 0, -1);
+    if (substr("TRWAGMYFPDXBNJZSQVHLCKE", $numeros % 23, 1) == $letra && strlen($letra) == 1 && strlen($numeros) == 8) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 // Se exige que la clave tiene al menos 6 caracteres
 // Que el password tiene como máximo 16 caracteres
 // Que tiene al menos 1 letra minúscula
@@ -63,6 +73,6 @@ function errorPassword($clave) {
     }
     if (isset($error_clave))
         return implode("<br>", $error_clave);
-    else 
+    else
         return "";
 }

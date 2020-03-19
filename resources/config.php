@@ -4,14 +4,19 @@ if (!defined("INICIALIZADO")) {
 
     // Constantes 
     define("INICIALIZADO", true);
-    
-    define("RESOURCES_PATH", realpath(dirname(__FILE__)));
-    define("LIBRARY_PATH", realpath(dirname(__FILE__) . '/library'));
-    define("TEMPLATES_PATH", realpath(dirname(__FILE__) . '/templates'));
+
+    define("APACHE_ROOT_PATH", $_SERVER['DOCUMENT_ROOT']);
+    define("APP_FOLDER", "bankito");
+    define("APP_ROOT_PATH", APACHE_ROOT_PATH . '/' . APP_FOLDER);
+
+    define("RESOURCES_PATH", APP_ROOT_PATH . '/resources');
+    define("LIBRARY_PATH", RESOURCES_PATH. '/library');
+    define("TEMPLATES_PATH", RESOURCES_PATH . '/templates');
+
+    define("VENDOR_PATH", APP_ROOT_PATH . '/vendor');
     
     define("ENTORNO", "desarrollo");
     // defined("ENTORNO") or define("ENTORNO", "produccion");
-    
     // Configuración del intérprete de PHP
     if (ENTORNO == "desarrollo") {
         ini_set("error_reporting", "true");
@@ -55,12 +60,10 @@ if (!defined("INICIALIZADO")) {
         )
     );
 
-    $dbConexion = mysqli_connect($config['db']['host'], $config['db']['username'], 
-                                 $config['db']['password'], $config['db']['dbname']);
+    $dbConexion = mysqli_connect($config['db']['host'], $config['db']['username'], $config['db']['password'], $config['db']['dbname']);
     mysqli_query($dbConexion, "SET NAMES 'utf8'");
 
     // Iniciar la sesión
     session_start();
-
 }
 ?>

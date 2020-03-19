@@ -3,19 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Wamp64/www/bankito/public_html/index.php</file>
-            <file>file:/D:/Wamp64/www/bankito/resources/templates/principal_sidebar.php</file>
-            <file>file:/D:/Wamp64/www/bankito/resources/templates/principal_contenido.php</file>
-            <file>file:/D:/Wamp64/www/bankito/public_html/principal.php</file>
-            <file>file:/D:/Wamp64/www/bankito/resources/templates/index_versiones.php</file>
-            <file>file:/D:/Wamp64/www/bankito/resources/templates/index_header.php</file>
-            <file>file:/D:/Wamp64/www/bankito/resources/templates/error_404.php</file>
-            <file>file:/D:/Wamp64/www/bankito/resources/templates/principal_header.php</file>
-            <file>file:/D:/Wamp64/www/bankito/resources/templates/principal_footer.php</file>
-            <file>file:/D:/Wamp64/www/bankito/public_html/logout.php</file>
+            <file>file:/D:/Wamp64/www/bankito/resources/library/valida_entrada.php</file>
             <file>file:/D:/Wamp64/www/bankito/public_html/login.php</file>
+            <file>file:/D:/Wamp64/www/bankito/public_html/registro_paso1.php</file>
+            <file>file:/D:/Wamp64/www/bankito/public_html/registro.php</file>
             <file>file:/D:/Wamp64/www/bankito/public_html/iniciarsesion.php</file>
-            <file>file:/D:/Wamp64/www/bankito/public_html/error404.php</file>
+            <file>file:/D:/Wamp64/www/bankito/public_html/registrar.php</file>
+            <file>file:/D:/Wamp64/www/bankito/resources/config.php</file>
         </group>
     </open-files>
 </project-private>

@@ -5,10 +5,9 @@ require_once '../resources/config.php';
 // Recoger datos del formulario
 if (isset($_POST)) {
 
-    // Recoger datos del formulario y limpiamos de espacios el principio
-    // y final de las cadenas
-    $usuarioForm = trim($_POST['usuario']);
-    $passwordForm = trim($_POST['password']);
+    // Recogemos datos del formulario y saneamos las cadenas de entrada
+    $usuarioForm = trim(filter_input(INPUT_POST, 'usuario', FILTER_SANITIZE_STRING));
+    $passwordForm = trim(filter_input(INPUT_POST, 'password', FILTER_SANITIZE_SPECIAL_CHARS));
 
     // Borramos la sesión antigua, si la hubiera, para que tras un login
     // exitoso, el siguiente intento se compruebe debidamente y no aproveche
