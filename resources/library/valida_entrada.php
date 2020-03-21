@@ -1,5 +1,13 @@
 <?php
 
+// Esta función limpia la entrada de cualquier formulario de usuario
+function saneaEntrada($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+
 // Extraído de: https://blog.educacionit.com/2016/12/19/las-expresiones-regulares-mas-usadas-en-php/
 // 
 // Solo admite nombres que empiecen por letra, le siga de 6 a 22 letras o 
@@ -39,9 +47,9 @@ function validaTelefono($numero) {
     return preg_match($reg, $numero);
 }
 
-function validaDNI($dni) {
-    $letra = substr($dni, -1);
-    $numeros = substr($dni, 0, -1);
+function validaNif($nif) {
+    $letra = substr($nif, -1);
+    $numeros = substr($nif, 0, -1);
     if (substr("TRWAGMYFPDXBNJZSQVHLCKE", $numeros % 23, 1) == $letra && strlen($letra) == 1 && strlen($numeros) == 8) {
         return true;
     } else {

@@ -1,69 +1,53 @@
 <?php
 
-if (!defined("INICIALIZADO")) {
+define("PROTOCOLO", "http");
 
-    // Constantes 
-    define("INICIALIZADO", true);
+// Constantes rutas en disco duro
+define("APACHE_ROOT_PATH", $_SERVER['DOCUMENT_ROOT']);
+define("APP_FOLDER", "bankito");
+define("APP_ROOT_PATH", APACHE_ROOT_PATH . '/' . APP_FOLDER);
 
-    define("APACHE_ROOT_PATH", $_SERVER['DOCUMENT_ROOT']);
-    define("APP_FOLDER", "bankito");
-    define("APP_ROOT_PATH", APACHE_ROOT_PATH . '/' . APP_FOLDER);
+define("RESOURCES_PATH", APP_ROOT_PATH . '/resources');
+define("LIBRARY_PATH", RESOURCES_PATH . '/library');
+define("TEMPLATES_PATH", RESOURCES_PATH . '/templates');
 
-    define("RESOURCES_PATH", APP_ROOT_PATH . '/resources');
-    define("LIBRARY_PATH", RESOURCES_PATH. '/library');
-    define("TEMPLATES_PATH", RESOURCES_PATH . '/templates');
-
-    define("VENDOR_PATH", APP_ROOT_PATH . '/vendor');
-    
-    define("ENTORNO", "desarrollo");
-    // defined("ENTORNO") or define("ENTORNO", "produccion");
-    // Configuración del intérprete de PHP
-    if (ENTORNO == "desarrollo") {
-        ini_set("error_reporting", "true");
-        error_reporting(E_ALL | E_STRCT);
-    } else { //Producción u otro caso no especificado (el más escricto)
-        ini_set("error_reporting", "false");
-    }
-
-    // Variables para la construcción del array config
-    $_dbname = "";
-    $_username = "";
-    $_password = "";
-    $_host = "";
-
-    if (ENTORNO == "desarrollo") {
-        $_dbname = "bankito";
-        $_username = "bankitoadmin";
-        $_password = "admin";
-        $_host = "localhost";
-    } else if (ENTORNO == "produccion") {
-        $_dbname = "bankito";
-        $_username = "kike";
-        $_password = "Pavjclob.101";
-        $_host = "217.112.92.116";
-    }
+define("VENDOR_PATH", APP_ROOT_PATH . '/vendor');
 
 
-    $config = array(
-        "db" => array(
-            "dbname" => $_dbname,
-            "username" => $_username,
-            "password" => $_password,
-            "host" => $_host
-        ),
-        "urls" => array(
-            "baseUrl" => "http://bankito.com"
-        ),
-        "paths" => array(
-            "resources" => $_SERVER["DOCUMENT_ROOT"] . "/resources",
-            "images" => $_SERVER["DOCUMENT_ROOT"] . "/public_html/images"
-        )
-    );
 
-    $dbConexion = mysqli_connect($config['db']['host'], $config['db']['username'], $config['db']['password'], $config['db']['dbname']);
-    mysqli_query($dbConexion, "SET NAMES 'utf8'");
-
-    // Iniciar la sesión
-    session_start();
+// Constantes de entorno
+define("ENTORNO", "desarrollo"); // define("ENTORNO", "produccion");
+// Configuración del intérprete de PHP
+if (ENTORNO == "desarrollo") {
+    ini_set("error_reporting", "true");
+    error_reporting(E_ALL | E_STRICT);
+} else { //Producción u otro caso no especificado (el más escricto)
+    ini_set("error_reporting", "false");
 }
+
+// Variables para la construcción del array config
+$dbName = "";
+$username = "";
+$password = "";
+$host = "";
+
+if (ENTORNO == "desarrollo") {
+    $dbName = "bankito";
+    $userName = "bankitoadmin";
+    $password = "admin";
+    $host = "localhost";
+} else if (ENTORNO == "produccion") {
+    $dbName = "bankito";
+    $userName = "kike";
+    $password = "Pavjclob.101";
+    $host = "217.112.92.116";
+}
+
+define("BASE_URL", PROTOCOLO . '://' . $host . '/' . APP_FOLDER . '/');
+
+$dbConexion = mysqli_connect($host, $userName, $password, $dbName);
+mysqli_query($dbConexion, "SET NAMES 'utf8'");
+
+// Iniciar la sesión
+session_start();
 ?>

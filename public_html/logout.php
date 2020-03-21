@@ -1,9 +1,7 @@
 <?php
 require_once '../resources/config.php';
+require LIBRARY_PATH . '/maneja_sesion.php';
 
-if(isset($_SESSION['usuario'])) {
-    unset($_SESSION['usuario']);
-}
-session_destroy();
+cierraSesionSegura();
 
 header('Location: index.php');

@@ -13,7 +13,7 @@ include TEMPLATES_PATH . '/index_header.php';
 $nombre = "";
 $apellido1 = "";
 $apellido2 = "";
-$dni = "";
+$nif = "";
 $email = "";
 $usuario = "";
 
@@ -27,7 +27,7 @@ if (isset($_SESSION['error_registro'])) {
             $nombre = $_SESSION['nombre'];
             $apellido1 = $_SESSION['apellido1'];
             $apellido2 = $_SESSION['apellido2'];
-            $dni = $_SESSION['dni'];
+            $nif = $_SESSION['nif'];
             $email = $_SESSION['email'];
             $usuario = $_SESSION['usuario'];
             ?>
@@ -52,8 +52,8 @@ if (isset($_SESSION['error_registro'])) {
         <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="apellido2" value="<?= $apellido2 ?>" >
     </div>
     <div class="w3-section">
-        <label>DNI</label>
-        <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="dni" placeholder="Formato 00000000A" value="<?= $dni ?>" required>
+        <label>NIF/NIE</label>
+        <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="nif" placeholder="Formato 00000000A" value="<?= $nif ?>" required>
     </div>
     <div class="w3-section">
         <label>Email</label>
@@ -65,7 +65,11 @@ if (isset($_SESSION['error_registro'])) {
     </div>
     <div class="w3-section">
         <label>Contraseña</label>
-        <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="password" name="password" required>
+        <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="password" name="password1" required>
+    </div>
+    <div class="w3-section">
+        <label>Repita la contraseña</label>
+        <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="password" name="password2" required>
     </div>
     <button type="submit" name="enviar" class="w3-button w3-block w3-black">Enviar</button>
 </form>
@@ -76,7 +80,7 @@ if (isset($_SESSION['error_registro'])) {
     unset($_SESSION['nombre']);
     unset($_SESSION['apellido1']);
     unset($_SESSION['apellido2']);
-    unset($_SESSION['dni']);
+    unset($_SESSION['nif']);
     unset($_SESSION['email']);
     unset($_SESSION['usuario']);
 }

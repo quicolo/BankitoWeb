@@ -10,10 +10,11 @@ if (isset($_POST)) {
     $nombreForm = trim(filter_input(INPUT_POST, 'nombre', FILTER_SANITIZE_STRING));
     $apellido1Form = trim(filter_input(INPUT_POST, 'apellido1', FILTER_SANITIZE_STRING));
     $apellido2Form = trim(filter_input(INPUT_POST, 'apellido2', FILTER_SANITIZE_STRING));
-    $dniForm = trim(filter_input(INPUT_POST, 'dni', FILTER_SANITIZE_STRING));
+    $nifForm = trim(filter_input(INPUT_POST, 'nif', FILTER_SANITIZE_STRING));
     $emailForm = trim(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL));
     $usuarioForm = trim(filter_input(INPUT_POST, 'usuario', FILTER_SANITIZE_STRING));
-    $passwordForm = trim(filter_input(INPUT_POST, 'password', FILTER_SANITIZE_SPECIAL_CHARS));
+    $password1Form = trim(filter_input(INPUT_POST, 'password1', FILTER_SANITIZE_SPECIAL_CHARS));
+    $password2Form = trim(filter_input(INPUT_POST, 'password2', FILTER_SANITIZE_SPECIAL_CHARS));
 
     // Validamos el nombre
     if (empty($nombreForm)) {
@@ -38,12 +39,12 @@ if (isset($_POST)) {
         $errores[] = "El segundo apellido tiene un formato incorrecto";
     }
 
-    // Validamos el DNI
-    if (empty($dniForm)) {
-        $errores[] = "El DNI es un campo requerido";
+    // Validamos el NIF
+    if (empty($nifForm)) {
+        $errores[] = "El NIF/NIE es un campo requerido";
     } else {
-        if (!validaDNI($dniForm)) {
-            $errores[] = "El DNI no es correcto";
+        if (!validaNif($nifForm)) {
+            $errores[] = "El NIF/NIE no es correcto";
         }
     }
 
@@ -66,27 +67,31 @@ if (isset($_POST)) {
     }
 
     // Validamos el password
-    if (empty($passwordForm)) {
+    if (empty($password1Form)) {
         $errores[] = "La contraseña de usuario es un campo requerido";
     } else {
-        if (!validaPassword($passwordForm)) {
-            $errores[] = errorPassword($passwordForm);
+        if (!validaPassword($password1Form)) {
+            $errores[] = errorPassword($password1Form);
         }
+    }
+    if (strcmp($password1Form, $password2Form) != 0) {
+        $errores[] = "La contraseñas introducidas son distintas";
     }
 
 
     $_SESSION['nombre'] = $nombreForm;
     $_SESSION['apellido1'] = $apellido1Form;
     $_SESSION['apellido2'] = $apellido2Form;
-    $_SESSION['dni'] = $dniForm;
+    $_SESSION['nif'] = $nifForm;
     $_SESSION['email'] = $emailForm;
     $_SESSION['usuario'] = $usuarioForm;
-    
+    $_SESSION['direccionIp'] = $_SERVER['REMOTE_ADDR'] ?? "0.0.0.0";
+
     if (empty($errores)) {
-        $_SESSION['password'] = $passwordForm;
+        $_SESSION['password'] = $password1Form;
         header("Location: registro_paso1.php");
     } else {
         $_SESSION['error_registro'] = $errores;
-         header("Location: registro.php");
+        header("Location: registro.php");
     }
 }

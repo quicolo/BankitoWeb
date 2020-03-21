@@ -1,6 +1,7 @@
 <?php
 
 require_once '../resources/config.php';
+include LIBRARY_PATH . '/valida_entrada.php';
 
 // Recoger datos del formulario
 if (isset($_POST)) {
@@ -18,7 +19,7 @@ if (isset($_POST)) {
 
     // Verificamos los caracteres permitidos en el nombre de usuario así como 
     // el tamaño mínimo y máximo del nombre de usuario
-    if (preg_match('/^[a-zA-Z0-9]{5,50}$/', $usuarioForm)) {
+    if (validaUsuario($usuarioForm)) {
 
         // Consulta para comprobar las credenciales del usuario
         $query = "SELECT * FROM usuario WHERE nombre = '$usuarioForm'";
@@ -42,7 +43,7 @@ if (isset($_POST)) {
             $_SESSION['error_login'] = "Usuario o contraseña incorrecto";
         }
     } else {
-        $_SESSION['error_login'] = "Usuario con caracteres prohibidos";
+        $_SESSION['error_login'] = "Usuario o contraseña incorrecto";
     }
 
     if (isset($_SESSION['usuario']))
