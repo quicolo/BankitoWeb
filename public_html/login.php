@@ -7,8 +7,8 @@ include LIBRARY_PATH . '/valida_entrada.php';
 if (isset($_POST)) {
 
     // Recogemos datos del formulario y saneamos las cadenas de entrada
-    $usuarioForm = trim(filter_input(INPUT_POST, 'usuario', FILTER_SANITIZE_STRING));
-    $passwordForm = trim(filter_input(INPUT_POST, 'password', FILTER_SANITIZE_SPECIAL_CHARS));
+    $usuarioForm = trim(filter_input(INPUT_POST, 'usuario', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
+    $passwordForm = trim(filter_input(INPUT_POST, 'password', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
 
     // Borramos la sesión antigua, si la hubiera, para que tras un login
     // exitoso, el siguiente intento se compruebe debidamente y no aproveche
