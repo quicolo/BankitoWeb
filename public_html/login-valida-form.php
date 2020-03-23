@@ -1,7 +1,7 @@
 <?php
 
 require_once '../resources/config.php';
-include LIBRARY_PATH . '/valida_entrada.php';
+include LIBRARY_PATH . '/valida-entrada.php';
 
 // Recoger datos del formulario
 if (isset($_POST)) {
@@ -49,6 +49,6 @@ if (isset($_POST)) {
     if (isset($_SESSION['usuario']))
         header('Location: principal.php');
     else
-        header('Location: iniciarsesion.php');
+        header('Location: login-form.php');
 }
 

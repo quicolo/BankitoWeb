@@ -1,7 +1,7 @@
 <?php
 
 require_once '../resources/config.php';
-include LIBRARY_PATH . '/valida_entrada.php';
+include LIBRARY_PATH . '/valida-entrada.php';
 
 // Recoger datos del formulario
 if (isset($_POST)) {
@@ -89,9 +89,9 @@ if (isset($_POST)) {
 
     if (empty($errores)) {
         $_SESSION['password'] = $password1Form;
-        header("Location: registro_paso1.php");
+        header("Location: registro-enviar-mail.php");
     } else {
         $_SESSION['error_registro'] = $errores;
-        header("Location: registro.php");
+        header("Location: registro-form.php");
     }
 }

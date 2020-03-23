@@ -1,8 +1,8 @@
 <?php
 
 require_once '../resources/config.php';
-require LIBRARY_PATH . '/envio_mail.php';
-require LIBRARY_PATH . '/maneja_sesion.php';
+require LIBRARY_PATH . '/envio-mail.php';
+require LIBRARY_PATH . '/maneja-sesion.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 
@@ -28,7 +28,7 @@ if (isset($_SESSION['password'])) {
         // Generamos el token que identificará al intento de registro
         $token = password_hash($_SESSION['nif'] . $_SESSION['usuario'] . $_SESSION['password'], PASSWORD_BCRYPT);
         // Preparamos el enlace que irá en el mail   
-        $enlace = BASE_URL . 'registro_paso2.php' . '?token=' . $token;
+        $enlace = BASE_URL . 'registro-confirma-mail.php' . '?token=' . $token;
 
         // Almacenamos el registro de usuario en la BD
         $ip = $_SESSION['direccionIp'];
@@ -48,7 +48,7 @@ if (isset($_SESSION['password'])) {
         $resultInsert = mysqli_query($dbConexion, $insertRegistro);
         if ($resultInsert) {
             // Cargamos la plantilla del mail
-            $contenido = cargaFichero(TEMPLATES_PATH . '/registro_mail_1.php');
+            $contenido = cargaFichero(TEMPLATES_PATH . '/registro-contenido-mail.php');
 
             // Reemplazamos los valores en el contenido del mail
             $contenido = str_replace('%nombre%', $_SESSION['nombre'], $contenido);
@@ -74,7 +74,7 @@ if (isset($_SESSION['password'])) {
         header('Location: error-general.php');
     }
     else {
-        header('Location: registro_mail_ok.php');
+        header('Location: registro-pendiente-mail.php');
     }
     
 }

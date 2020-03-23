@@ -4,4 +4,4 @@ require LIBRARY_PATH . '/maneja-sesion.php';
 
 cierraSesionSegura();
 
-header('Location: index.php');
+include TEMPLATES_PATH . '/error-404.php';

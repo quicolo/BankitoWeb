@@ -1,6 +1,6 @@
 <?php
 require_once '../resources/config.php';
-include TEMPLATES_PATH . '/index_header.php';
+include TEMPLATES_PATH . '/index-header.php';
 ?>
 
 <!-- Registro OK -->
@@ -12,5 +12,5 @@ include TEMPLATES_PATH . '/index_header.php';
     Ya puedes iniciar sesión en nuestra web. ¡Bienvenido/a!</H3>
 
 <?php
-include TEMPLATES_PATH . '/index_footer.php';
+include TEMPLATES_PATH . '/index-footer.php';
 ?>

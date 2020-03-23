@@ -24,10 +24,10 @@
                     <a href="index.php#versiones" class="w3-button w3-block">Versiones</a>
                 </div>
                 <div class="w3-col s3">
-                    <a href="registro.php" class="w3-button w3-block">Regístrate</a>
+                    <a href="registro-form.php" class="w3-button w3-block">Regístrate</a>
                 </div>
                 <div class="w3-col s3">
-                    <a href="iniciarsesion.php" class="w3-button w3-block">Iniciar sesión</a>
+                    <a href="login-form.php" class="w3-button w3-block">Iniciar sesión</a>
                 </div>
             </div>
         </div>

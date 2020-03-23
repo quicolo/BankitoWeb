@@ -1,6 +1,6 @@
 <?php
 require_once '../resources/config.php';
-include TEMPLATES_PATH . '/index_header.php';
+include TEMPLATES_PATH . '/index-header.php';
 ?>
 
 <!-- Registro -->
@@ -38,7 +38,7 @@ if (isset($_SESSION['error_registro'])) {
 ?>
 
 
-<form class="w3-container" method="post" action="registrar.php" target="_blank">
+<form class="w3-container" method="post" action="registro-valida-form.php" target="_blank">
     <div class="w3-section">
         <label>Nombre</label>
         <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="nombre" required value="<?= $nombre ?>">
@@ -87,5 +87,5 @@ if (isset($_SESSION['error_registro'])) {
 ?>
 
 <?php
-include TEMPLATES_PATH . '/index_footer.php';
+include TEMPLATES_PATH . '/index-footer.php';
 ?>

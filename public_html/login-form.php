@@ -1,6 +1,6 @@
 <?php
 require_once '../resources/config.php';
-include TEMPLATES_PATH . '/index_header.php';
+include TEMPLATES_PATH . '/index-header.php';
 ?>
 
 <!-- Inicia Sesión -->
@@ -17,7 +17,7 @@ include TEMPLATES_PATH . '/index_header.php';
             <img src="images/img_avatar4.png" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
         </div>
 
-        <form class="w3-container" method="post" action="login.php">
+        <form class="w3-container" method="post" action="login-valida-form.php">
             <div class="w3-section">
                 <?php if (isset($_SESSION['error_login'])) { ?>
                     <script>
@@ -39,8 +39,8 @@ include TEMPLATES_PATH . '/index_header.php';
         </form>
 
         <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-            <a href="registro.php" class="w3-button w3-blue">No tengo usuario</a>
-            <a href="olvidopass.php" class="w3-button w3-right w3-red">Olvidé mi contraseña</a>
+            <a href="registro-form.php" class="w3-button w3-blue">No tengo usuario</a>
+            <a href="olvido-pass.php" class="w3-button w3-right w3-red">Olvidé mi contraseña</a>
         </div>
 
     </div>
@@ -57,5 +57,5 @@ if (isset($_SESSION['error_login'])) {
         document.getElementById('loginEmergente').style.display = 'block';
     </script>
 <?php } 
-include TEMPLATES_PATH . '/index_footer.php';
+include TEMPLATES_PATH . '/index-footer.php';
 ?>    
