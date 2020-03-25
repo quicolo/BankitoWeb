@@ -3,6 +3,7 @@
 require_once '../resources/config.php';
 require LIBRARY_PATH . '/envio-mail.php';
 require LIBRARY_PATH . '/maneja-sesion.php';
+require LIBRARY_PATH . '/maneja-fichero.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 
@@ -77,11 +78,4 @@ if (isset($_SESSION['password'])) {
         header('Location: registro-pendiente-mail.php');
     }
     
-}
-
-function cargaFichero($fichero) {
-    $manejador = fopen($fichero, "r");
-    $contenido = fread($manejador, filesize($fichero));
-    fclose($manejador);
-    return $contenido ?? "No se pudo abrir la plantilla de correo";
 }

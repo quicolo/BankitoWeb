@@ -40,7 +40,7 @@ include TEMPLATES_PATH . '/index-header.php';
 
         <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
             <a href="registro-form.php" class="w3-button w3-blue">No tengo usuario</a>
-            <a href="olvido-pass.php" class="w3-button w3-right w3-red">Olvidé mi contraseña</a>
+            <a href="olvido-form.php" class="w3-button w3-right w3-red">Olvidé mi contraseña</a>
         </div>
 
     </div>

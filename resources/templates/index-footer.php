@@ -2,7 +2,11 @@
 <!-- Cierre del contenido que se abrió en el header -->
 
 <footer class="w3-container w3-padding-32 w3-light-grey w3-center">
-    <h4>Desarrollado por Enrique Royo Sánchez</h4>
+    <h4>Desarrollado por Enrique Royo Sánchez &copy;
+    <?php 
+    echo date("Y");
+    ?>
+    </h4>
     <a href="#" class="w3-button w3-black w3-margin"><i class="fa fa-arrow-up w3-margin-right"></i>Arriba</a>
     <div class="w3-xlarge w3-section">
         <i class="fa fa-facebook-official w3-hover-opacity"></i>

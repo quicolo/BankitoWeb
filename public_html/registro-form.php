@@ -38,7 +38,7 @@ if (isset($_SESSION['error_registro'])) {
 ?>
 
 
-<form class="w3-container" method="post" action="registro-valida-form.php" target="_blank">
+<form class="w3-container" method="post" action="registro-valida-form.php">
     <div class="w3-section">
         <label>Nombre</label>
         <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="nombre" required value="<?= $nombre ?>">

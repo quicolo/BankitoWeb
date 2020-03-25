@@ -1,1 +1,1 @@
-ErrorDocument 404 http://localhost/bankito/error404.php
+ErrorDocument 404 http://localhost/bankito/error-404.php

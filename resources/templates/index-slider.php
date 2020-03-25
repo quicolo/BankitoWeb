@@ -40,6 +40,11 @@
 // Slideshow
     var slideIndex = 1;
     showDivs(slideIndex);
+    setInterval(nextDivs, 3500);
+
+    function nextDivs() {
+        showDivs(slideIndex += 1);
+    }
 
     function plusDivs(n) {
         showDivs(slideIndex += n);
