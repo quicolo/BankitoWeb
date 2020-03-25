@@ -13,7 +13,8 @@ define("TEMPLATES_PATH", RESOURCES_PATH . '/templates');
 
 define("VENDOR_PATH", APP_ROOT_PATH . '/vendor');
 
-
+// Constantes de comportamiento de la aplicación
+define("MINUTOS_CADUCA_TOKEN", 30);
 
 // Constantes de entorno
 define("ENTORNO", "desarrollo"); // define("ENTORNO", "produccion");

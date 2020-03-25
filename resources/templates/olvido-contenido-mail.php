@@ -367,6 +367,7 @@
                                                         </tr>
                                                     </tbody>
                                                 </table>
+                                                <p>Este enlace caducará en unos minutos, por favor termina el proceso cuanto antes.</p>
                                                 <p>Gracias por confiar en nosotros.</p>
                                                 <p><i>Por favor no responda a este correo, se ha generado de forma automática.</i></p>
                                             </td>
