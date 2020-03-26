@@ -1,4 +1,5 @@
 <?php
+include 'entorno.php';
 
 define("PROTOCOLO", "http");
 
@@ -16,10 +17,9 @@ define("VENDOR_PATH", APP_ROOT_PATH . '/vendor');
 // Constantes de comportamiento de la aplicación
 define("MINUTOS_CADUCA_TOKEN", 30);
 
-// Constantes de entorno
-define("ENTORNO", "desarrollo"); // define("ENTORNO", "produccion");
-// Configuración del intérprete de PHP
-if (ENTORNO == "desarrollo") {
+
+// Configuración del intérprete de PHP según en nivel de errores
+if (ERROR_LEVEL == "DEPURACION") {
     ini_set("error_reporting", "true");
     error_reporting(E_ALL | E_STRICT);
 } else { //Producción u otro caso no especificado (el más escricto)
@@ -32,16 +32,16 @@ $username = "";
 $password = "";
 $host = "";
 
-if (ENTORNO == "desarrollo") {
+if (ENTORNO == "DESARROLLO") {
     $dbName = "bankito";
     $userName = "bankitoadmin";
     $password = "admin";
     $host = "localhost";
-} else if (ENTORNO == "produccion") {
+} else if (ENTORNO == "PRODUCCION") {
     $dbName = "bankito";
     $userName = "kike";
     $password = "Pavjclob.101";
-    $host = "217.112.92.116";
+    $host = "localhost";
 }
 
 define("BASE_URL", PROTOCOLO . '://' . $host . '/' . APP_FOLDER . '/');
