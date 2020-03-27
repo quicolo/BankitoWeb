@@ -5,7 +5,7 @@ define("PROTOCOLO", "http");
 
 // Constantes rutas en disco duro
 define("APACHE_ROOT_PATH", $_SERVER['DOCUMENT_ROOT']);
-define("APP_FOLDER", "bankito");
+define("APP_FOLDER", "bankitoweb");
 define("APP_ROOT_PATH", APACHE_ROOT_PATH . '/' . APP_FOLDER);
 
 define("RESOURCES_PATH", APP_ROOT_PATH . '/resources');
