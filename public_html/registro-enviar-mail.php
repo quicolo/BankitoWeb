@@ -4,6 +4,7 @@ require_once '../resources/config.php';
 require LIBRARY_PATH . '/envio-mail.php';
 require LIBRARY_PATH . '/maneja-sesion.php';
 require LIBRARY_PATH . '/maneja-fichero.php';
+require LIBRARY_PATH . '/maneja-consola.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 
@@ -48,6 +49,7 @@ if (isset($_SESSION['password'])) {
 
         $resultInsert = mysqli_query($dbConexion, $insertRegistro);
         if ($resultInsert) {
+            imprimePorConsola("Nos disponemos para mandar el mail");
             // Cargamos la plantilla del mail
             $contenido = cargaFichero(TEMPLATES_PATH . '/registro-contenido-mail.php');
 
@@ -57,17 +59,25 @@ if (isset($_SESSION['password'])) {
 
             // Preparamos y enviamos el mail    
             $mail = new PHPMailer();
-            inicializaConGmail($mail);
-            $resulMail = enviaConGmail($mail, $_SESSION['email'], "Completa tu registro en Bankito", $contenido);
+            imprimePorConsola($mail);
 
+            inicializaConGmail($mail);
+
+            imprimePorConsola("Despues de inicializar");
+            imprimePorConsola($mail);
+            $resulMail = enviaConGmail($mail, $_SESSION['email'], "Completa tu registro en Bankito", $contenido);
+            imprimePorConsola($resulMail);
             if (!$resulMail) {
                 $errores[] = "Error al enviar el mail a la dirección " . $_SESSION['email'];
             }
         }
         else {
+            imprimePorConsola($resultInsert);
             $errores[] = "Error al escribir en la BD";
         }
     }
+
+    die();
     // Borrado de los datos de sesión
     cierraSesionSegura();
     
