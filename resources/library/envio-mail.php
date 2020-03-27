@@ -37,6 +37,17 @@ function enviaConGmail($mail, $destino, $asunto, $contenidoHTML) {
     // adjuntos
     // $mail->addAttachment("archivo.xls");
     // enviar
-    $resultado = $mail->Send();
+    
+    $resultado=false;
+
+    try{
+        $resultado = $mail->Send();
+    } 
+    catch (phpmailerException $e) {
+        echo $e->errorMessage();  //PHPMailer error messages
+    } 
+    catch (Exception $e) {
+            echo $e->getMessage();  // other error messages
+    }
     return $resultado;
 }

@@ -59,25 +59,19 @@ if (isset($_SESSION['password'])) {
 
             // Preparamos y enviamos el mail    
             $mail = new PHPMailer();
-            imprimePorConsola($mail);
-
+            
             inicializaConGmail($mail);
 
-            imprimePorConsola("Despues de inicializar");
-            imprimePorConsola($mail);
             $resulMail = enviaConGmail($mail, $_SESSION['email'], "Completa tu registro en Bankito", $contenido);
-            imprimePorConsola($resulMail);
             if (!$resulMail) {
                 $errores[] = "Error al enviar el mail a la dirección " . $_SESSION['email'];
             }
         }
         else {
-            imprimePorConsola($resultInsert);
             $errores[] = "Error al escribir en la BD";
         }
     }
 
-    die();
     // Borrado de los datos de sesión
     cierraSesionSegura();
     
