@@ -53,7 +53,8 @@ if (isset($_SESSION['error_registro'])) {
     </div>
     <div class="w3-section">
         <label>NIF/NIE</label>
-        <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="nif" placeholder="Formato 00000000A" value="<?= $nif ?>" required>
+        <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="nif" 
+                      pattern="[0-9]{8}[A-Z]{1}" title="Formato: 8 dígitos seguidos de una letra mayúscula" placeholder="Formato 00000000A" value="<?= $nif ?>" required>
     </div>
     <div class="w3-section">
         <label>Email</label>

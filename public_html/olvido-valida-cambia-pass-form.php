@@ -22,8 +22,7 @@ if (isset($_SESSION['token'])) {
     }
 
     if (!isset($errorValida)) {
-        $queryToken = "SELECT * FROM restablece_pass WHERE token = '" . $token . "'";
-        $resultToken = mysqli_query($dbConexion, $queryToken);
+        $resultToken = buscaRestablecePassPorToken($dbConexion, $token);
 
         // Si está todo bien tenemos que salvar los datos en las tablas adecuadas
         if ($resultToken && mysqli_num_rows($resultToken) == 1) {
@@ -39,13 +38,12 @@ if (isset($_SESSION['token'])) {
             else {
                 // Buscamos el usuario asociado al NIF/NIE asociado al token
                 $nif = $arrayToken['nif'];  
-                $queryCliente = "SELECT * FROM cliente WHERE nif = '" . $nif . "'";
-                $resultCliente = mysqli_query($dbConexion, $queryCliente);
+                $resultCliente = buscaClientePorNif($dbConexion, $nif);
                 $arrayCliente = mysqli_fetch_assoc($resultCliente);
                 $idUsuario = $arrayCliente['usuario_id_usuario'];
+
                 $newPass = password_hash($password1Form, PASSWORD_BCRYPT );
-                $queryActualiza = "UPDATE usuario SET password='".$newPass."' WHERE id_usuario=".$idUsuario;
-                $resultActualiza = mysqli_query($dbConexion, $queryActualiza);
+                $resultActualiza = actualizaPasswordUsuarioPorId($dbConexion, $newPass, $idUsuario);
                 
                 if (!$resultActualiza){
                     $_SESSION['error'] = "Fallo al guardar la nueva contraseña";

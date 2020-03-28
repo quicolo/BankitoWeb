@@ -4,6 +4,7 @@ require_once '../resources/config.php';
 require LIBRARY_PATH . '/envio-mail.php';
 require LIBRARY_PATH . '/maneja-sesion.php';
 require LIBRARY_PATH . '/maneja-fichero.php';
+require LIBRARY_PATH . '/maneja-base-datos.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 
@@ -11,8 +12,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 if (isset($_SESSION['nif'])) {
 
     // Comprobamos si existe el cliente buscando por el NIF/NIE
-    $queryCliente = "SELECT * FROM cliente WHERE nif = '" . $_SESSION['nif'] . "'";
-    $resultCliente = mysqli_query($dbConexion, $queryCliente);
+    $resultCliente = buscaClientePorNif($dbConexion, $_SESSION['nif']);
 
     if (isset($resultCliente) && mysqli_num_rows($resultCliente) == 1) {
         $arrayCliente = mysqli_fetch_assoc($resultCliente);
@@ -24,8 +24,7 @@ if (isset($_SESSION['nif'])) {
         else if (isset($_SESSION['usuario']) && $_SESSION['usuario'] != "") {
             // Buscar por usuario y decidir
             $idUsuario = $arrayCliente['usuario_id_usuario'];
-            $queryUsuario = "SELECT * FROM usuario WHERE id_usuario = '" . $idUsuario . "'";
-            $resultUsuario = mysqli_query($dbConexion, $queryUsuario);
+            $resultUsuario = buscaUsuarioPorId($dbConexion, $idUsuario);
             
             if (isset($resultUsuario) && mysqli_num_rows($resultUsuario) == 1) {
                 $arrayUsuario = mysqli_fetch_assoc($resultUsuario);
@@ -59,11 +58,7 @@ if (isset($_SESSION['nif'])) {
         $email = $_SESSION['email']  ?? "";;
         $usu = $_SESSION['usuario']  ?? "";;
 
-        $insertRegistro = "INSERT INTO restablece_pass 
-                        (token, direccion_ip, nif, email, usuario, fecha_creacion) 
-            VALUES      ('$token', '$ip', '$nif', '$email', '$usu', now())";
-
-        $resultInsert = mysqli_query($dbConexion, $insertRegistro);
+        $resultInsert = insertaRestablecePass($dbConexion, $token, $ip, $nif, $email, $usu);
         if ($resultInsert) {
             // Cargamos la plantilla del mail
             $contenido = cargaFichero(TEMPLATES_PATH . '/olvido-contenido-mail.php');

@@ -7,6 +7,7 @@ require LIBRARY_PATH . '/maneja-sesion.php';
 <h1 class="w3-center w3-card w3-black">
     <?php 
         echo $_SESSION['error'] ?? "ERROR INDEFINIDO";
+        echo $_SESSION['errores'] ?? "ERROR INDEFINIDO";
         cierraSesionSegura();
     ?>
 </H1>
