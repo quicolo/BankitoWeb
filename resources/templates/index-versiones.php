@@ -7,29 +7,60 @@
             <!-- Table -->
             <table class="w3-table-all w3-centered w3-card">
                 <tr>
-                    <th class="w3-black w3-quarter">Características</th>
+                    <th class="w3-black w3-quarter">Características principales</th>
                     <th class="w3-green w3-quarter">Básica</th>
-                    <th class="w3-orange w3-quarter">Intermedia</th>
+                    <th class="w3-deep-purple w3-quarter">Intermedia</th>
                     <th class="w3-red w3-quarter">Avanzada</th>
                 </tr>
                 <tr>
-                    <td class="w3-quarter">Característica 1</td>
-                    <td class="w3-quarter"><img src="images/GreenCheck.png" height="25px"></td>
-                    <td class="w3-quarter"><img src="images/GreenCheck.png" height="25px"></td>
-                    <td class="w3-quarter"><img src="images/GreenCheck.png" height="25px"></td>
+                    <td class="w3-quarter"><b>Paradigma de programación</b></td>
+                    <td class="w3-quarter">Funcional</td>
+                    <td class="w3-quarter"><img src="images/en-construccion.png" height="25px"></td>
+                    <td class="w3-quarter"><img src="images/en-construccion.png" height="25px"></td>
                 </tr>
                 <tr>
-                    <td class="w3-quarter">Característica 2</td>
-                    <td class="w3-quarter"><img src="images/GreenCheck.png" height="25px"></td>
-                    <td class="w3-quarter"><img src="images/GreenCheck.png" height="25px"></td>
-                    <td class="w3-quarter"><img src="images/GreenCheck.png" height="25px"></td>
+                    <td class="w3-quarter"><b>Diseño del código</b></td>
+                    <td class="w3-quarter"><img src="images/smiley-bad_640.png" height="25px"></td>
+                    <td class="w3-quarter"><img src="images/en-construccion.png" height="25px"></td>
+                    <td class="w3-quarter"><img src="images/en-construccion.png" height="25px"></td>
                 </tr>
                 <tr>
-                    <td class="w3-quarter">Característica 3</td>
-                    <td class="w3-quarter"><img src="images/GreenCheck.png" height="25px"></td>
-                    <td class="w3-quarter"><img src="images/GreenCheck.png" height="25px"></td>
-                    <td class="w3-quarter"><img src="images/GreenCheck.png" height="25px"></td>
+                    <td class="w3-quarter"><b>Experiencia de usuario</b></td>
+                    <td class="w3-quarter"><img src="images/smiley-bad_640.png" height="25px"></td>
+                    <td class="w3-quarter"><img src="images/en-construccion.png" height="25px"></td>
+                    <td class="w3-quarter"><img src="images/en-construccion.png" height="25px"></td>
                 </tr>
+                <tr>
+                    <td class="w3-quarter"><b>Interfaz gráfica</b></td>
+                    <td class="w3-quarter"><img src="images/smiley-regular_640.png" height="25px"></td>
+                    <td class="w3-quarter"><img src="images/en-construccion.png" height="25px"></td>
+                    <td class="w3-quarter"><img src="images/en-construccion.png" height="25px"></td>
+                </tr>
+                <tr>
+                    <td class="w3-quarter"><b>Semántica de la URL</b></td>
+                    <td class="w3-quarter"><img src="images/smiley-regular_640.png" height="25px"></td>
+                    <td class="w3-quarter"><img src="images/en-construccion.png" height="25px"></td>
+                    <td class="w3-quarter"><img src="images/en-construccion.png" height="25px"></td>
+                </tr>
+                <tr>
+                    <td class="w3-quarter"><b>Seguridad</b></td>
+                    <td class="w3-quarter"><img src="images/smiley-regular_640.png" height="25px"></td>
+                    <td class="w3-quarter"><img src="images/en-construccion.png" height="25px"></td>
+                    <td class="w3-quarter"><img src="images/en-construccion.png" height="25px"></td>
+                </tr>
+                <tr>
+                    <td class="w3-quarter"><b>Sistema de control de versiones</b></td>
+                    <td class="w3-quarter"><img src="images/smiley-good_640.png" height="25px"></td>
+                    <td class="w3-quarter"><img src="images/en-construccion.png" height="25px"></td>
+                    <td class="w3-quarter"><img src="images/en-construccion.png" height="25px"></td>
+                </tr>
+                <tr>
+                    <td class="w3-quarter"></td>
+                    <td class="w3-quarter"><a href="version-basica.php" class="w3-btn w3-green w3-round w3-hover-black w3-small">+ Info</a></td>
+                    <td class="w3-quarter"><img src="images/en-construccion.png" height="25px"></td>
+                    <td class="w3-quarter"><img src="images/en-construccion.png" height="25px"></td>
+                </tr>
+                
             </table>
         </div>
     </div>
