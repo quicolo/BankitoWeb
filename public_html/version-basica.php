@@ -15,7 +15,7 @@ iniciaSesionSegura();
     descripción de cada uno de ellos.</p>
     <div class="w3-card-4 w3-margin-bottom">
         <header class="w3-container w3-win8-indigo w3-padding-16">
-            <i class="fas fa-palette fa-2x"></i><span class="w3-xlarge"> Interfaz gráfica</span>
+            <i class="fas fa-palette fa-2x"></i><span class="w3-xlarge w3-margin-left"> Interfaz gráfica</span>
         </header>
         <div class="w3-container">
             <p>Desarrollada en HTML/CSS, haciendo <b>uso del framework  
@@ -26,7 +26,7 @@ iniciaSesionSegura();
     </div>
     <div class="w3-card-4 w3-margin-bottom">
         <header class="w3-container w3-win8-violet w3-padding-16">
-            <i class="fas fa-diagnoses fa-2x"></i><span class="w3-xlarge"> Experiencia de usuario</span>
+            <i class="fas fa-diagnoses fa-2x"></i><span class="w3-xlarge w3-margin-left"> Experiencia de usuario</span>
         </header>
         <div class="w3-container">
             <p>Desarrollada con muy <b>poco Javascript y sin llamadas Ajax</b>, la experiencia de usuario de
@@ -35,7 +35,7 @@ iniciaSesionSegura();
     </div>
     <div class="w3-card-4 w3-margin-bottom">
         <header class="w3-container w3-win8-magenta w3-padding-16">
-            <i class="fas fa-spell-check fa-2x"></i><span class="w3-xlarge"> Semántica de la URL</span>
+            <i class="fas fa-spell-check fa-2x"></i><span class="w3-xlarge w3-margin-left"> Semántica de la URL</span>
         </header>
         <div class="w3-container">
             <p>Las URL de esta versión <b>no utilizan carpetas como categorías semánticas</b> por lo que
@@ -47,7 +47,7 @@ iniciaSesionSegura();
     </div>
     <div class="w3-card-4 w3-margin-bottom">
         <header class="w3-container w3-win8-crimson w3-padding-16">
-            <i class="fas fa-cubes fa-2x"></i><span class="w3-xlarge"> Paradigma de programación</span>
+            <i class="fas fa-cubes fa-2x"></i><span class="w3-xlarge w3-margin-left"> Paradigma de programación</span>
         </header>
         <div class="w3-container">
             <p><b>Funcional</b>. Aunque actualmente PHP es multiparadigma (funcional y orientado a objetos), inicialmente 
@@ -58,7 +58,7 @@ iniciaSesionSegura();
     </div>
     <div class="w3-card-4 w3-margin-bottom">
         <header class="w3-container w3-win8-red w3-padding-16">
-            <i class="fas fa-code fa-2x"></i><span class="w3-xlarge"> Diseño del código</span>
+            <i class="fas fa-code fa-2x"></i><span class="w3-xlarge w3-margin-left"> Diseño del código</span>
         </header>
         <div class="w3-container">
             <p>Diseño <b>fuertemente acoplado basado en dos capas</b>: Vista y Modelo. La maquetación de la vista se realiza mediante plantillas muy básicas. 
@@ -68,7 +68,7 @@ iniciaSesionSegura();
     </div>
     <div class="w3-card-4 w3-margin-bottom">
         <header class="w3-container w3-win8-orange w3-padding-16">
-            <i class="fas fa-shield-alt fa-2x"></i><span class="w3-xlarge"> Seguridad</span>
+            <i class="fas fa-shield-alt fa-2x"></i><span class="w3-xlarge w3-margin-left"> Seguridad</span>
         </header>
         <div class="w3-container">
             <p>Se toman medidas activas para <b>dotar de cierto nivel de seguridad</b> en los siguientes aspectos:</p>
@@ -83,7 +83,7 @@ iniciaSesionSegura();
     </div>
     <div class="w3-card-4 w3-margin-bottom">
         <header class="w3-container w3-win8-amber w3-padding-16">
-            <i class="fas fa-bug fa-2x"></i><span class="w3-xlarge"> Depuración del código</span>
+            <i class="fas fa-bug fa-2x"></i><span class="w3-xlarge w3-margin-left"> Depuración del código</span>
         </header>
         <div class="w3-container">
             <p><b>Sin herramientas específicas de depuración de código</b>. Solo se utiliza una función que imprime por la consola del navegador
@@ -92,7 +92,7 @@ iniciaSesionSegura();
     </div>  
     <div class="w3-card-4 w3-margin-bottom">
         <header class="w3-container w3-win8-yellow w3-padding-16">
-            <i class="fab fa-git-alt fa-2x"></i><span class="w3-xlarge"> Control de versiones</span>
+            <i class="fab fa-git-alt fa-2x"></i><span class="w3-xlarge w3-margin-left"> Control de versiones</span>
         </header>
         <div class="w3-container">
             <p>Uso de <b><a href="https://git-scm.com/">Git</a> como sistema de control de versiones</b> local y distribuído. 
@@ -102,7 +102,7 @@ iniciaSesionSegura();
     </div> 
     <div class="w3-card-4 w3-margin-bottom">
         <header class="w3-container w3-win8-brown w3-padding-16">
-            <i class="fas fa-server fa-2x"></i><span class="w3-xlarge"> Entornos de ejecución</span>
+            <i class="fas fa-server fa-2x"></i><span class="w3-xlarge w3-margin-left"> Entornos de ejecución</span>
         </header>
         <div class="w3-container">
             <p>La aplicación puede correr en dos entornos:</p>
@@ -114,7 +114,7 @@ iniciaSesionSegura();
     </div> 
     <div class="w3-card-4 w3-margin-bottom">
         <header class="w3-container w3-win8-olive w3-padding-16">
-            <i class="fas fa-expand-arrows-alt fa-2x"></i><span class="w3-xlarge"> Dependencias externas</span>
+            <i class="fas fa-expand-arrows-alt fa-2x"></i><span class="w3-xlarge w3-margin-left"> Dependencias externas</span>
         </header>
         <div class="w3-container">
             <p>La aplicación tiene las siguientes dependencias externas:</p>
@@ -127,7 +127,7 @@ iniciaSesionSegura();
     </div> 
     <div class="w3-card-4 w3-margin-bottom">
         <header class="w3-container w3-win8-steel w3-padding-16">
-            <i class="far fa-window-restore fa-2x"></i><span class="w3-xlarge"> Software utilizado para el desarrollo</span>
+            <i class="far fa-window-restore fa-2x"></i><span class="w3-xlarge w3-margin-left"> Software utilizado para el desarrollo</span>
         </header>
         <div class="w3-container">
             <p>El desarrollo de la aplicación se ha realizado con las siguientes herramientas:</p>

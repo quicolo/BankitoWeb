@@ -19,16 +19,16 @@
         <div class="w3-top">
             <div class="w3-row w3-large w3-light-grey">
                 <div class="w3-col s3">
-                    <a href="index.php" class="w3-button w3-block w3-hover-black"><i class="fas fa-chart-line"></i> Inicio</a>
+                    <a href="index.php" class="w3-button w3-block w3-hover-black"><i class="fas fa-chart-line w3-margin-right"></i> Inicio</a>
                 </div>
                 <div class="w3-col s3">
-                    <a href="index.php#versiones" class="w3-button w3-block w3-hover-black"><i class="fas fa-code-branch"></i> Versiones</a>
+                    <a href="index.php#versiones" class="w3-button w3-block w3-hover-black"><i class="fas fa-code-branch w3-margin-right"></i> Versiones</a>
                 </div>
                 <div class="w3-col s3">
-                    <a href="registro-form.php" class="w3-button w3-block w3-hover-black"><i class="fas fa-clipboard-list"></i> Regístrate</a>
+                    <a href="registro-form.php" class="w3-button w3-block w3-hover-black"><i class="fas fa-clipboard-list w3-margin-right"></i> Regístrate</a>
                 </div>
                 <div class="w3-col s3">
-                    <a href="login-form.php" class="w3-button w3-block w3-hover-black"><i class="fas fa-sign-in-alt"></i> Iniciar sesión</a>
+                    <a href="login-form.php" class="w3-button w3-block w3-hover-black"><i class="fas fa-sign-in-alt w3-margin-right"></i> Iniciar sesión</a>
                 </div>
             </div>
         </div>

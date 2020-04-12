@@ -14,51 +14,51 @@
                 </tr>
                 <tr>
                     <td class="w3-quarter"><b>Paradigma de programación</b></td>
-                    <td class="w3-quarter">Funcional</td>
-                    <td class="w3-quarter"><img src="images/en-construccion.png" height="25px"></td>
-                    <td class="w3-quarter"><img src="images/en-construccion.png" height="25px"></td>
+                    <td class="w3-quarter"><i class="fas fa-star w3-text-yellow"></i><i class="far fa-star w3-text-gray"><i class="far fa-star w3-text-gray"></i></td></td>
+                    <td class="w3-quarter w3-text-gray"><i class="fas fa-laptop-code fa-lg"></i> + <i class="fas fa-mug-hot fa-lg"></i></td>
+                    <td class="w3-quarter w3-text-gray"><i class="fas fa-laptop-code fa-lg"></i> + <i class="fas fa-mug-hot fa-lg"></i></td>
                 </tr>
                 <tr>
                     <td class="w3-quarter"><b>Diseño del código</b></td>
-                    <td class="w3-quarter"><img src="images/smiley-bad_640.png" height="25px"></td>
-                    <td class="w3-quarter"><img src="images/en-construccion.png" height="25px"></td>
-                    <td class="w3-quarter"><img src="images/en-construccion.png" height="25px"></td>
+                    <td class="w3-quarter"><i class="fas fa-star w3-text-yellow"></i><i class="far fa-star w3-text-gray"><i class="far fa-star w3-text-gray"></i></td>
+                    <td class="w3-quarter w3-text-gray"><i class="fas fa-laptop-code fa-lg"></i> + <i class="fas fa-mug-hot fa-lg"></i></td>
+                    <td class="w3-quarter w3-text-gray"><i class="fas fa-laptop-code fa-lg"></i> + <i class="fas fa-mug-hot fa-lg"></i></td>
                 </tr>
                 <tr>
                     <td class="w3-quarter"><b>Experiencia de usuario</b></td>
-                    <td class="w3-quarter"><img src="images/smiley-bad_640.png" height="25px"></td>
-                    <td class="w3-quarter"><img src="images/en-construccion.png" height="25px"></td>
-                    <td class="w3-quarter"><img src="images/en-construccion.png" height="25px"></td>
+                    <td class="w3-quarter"><i class="fas fa-star w3-text-yellow"></i><i class="far fa-star w3-text-gray"><i class="far fa-star w3-text-gray"></td>
+                    <td class="w3-quarter w3-text-gray"><i class="fas fa-laptop-code fa-lg"></i> + <i class="fas fa-mug-hot fa-lg"></i></td>
+                    <td class="w3-quarter w3-text-gray"><i class="fas fa-laptop-code fa-lg"></i> + <i class="fas fa-mug-hot fa-lg"></i></td>
                 </tr>
                 <tr>
                     <td class="w3-quarter"><b>Interfaz gráfica</b></td>
-                    <td class="w3-quarter"><img src="images/smiley-regular_640.png" height="25px"></td>
-                    <td class="w3-quarter"><img src="images/en-construccion.png" height="25px"></td>
-                    <td class="w3-quarter"><img src="images/en-construccion.png" height="25px"></td>
+                    <td class="w3-quarter"><i class="fas fa-star w3-text-yellow"></i><i class="fas fa-star w3-text-yellow"><i class="far fa-star w3-text-gray"></td>
+                    <td class="w3-quarter w3-text-gray"><i class="fas fa-laptop-code fa-lg"></i> + <i class="fas fa-mug-hot fa-lg"></i></td>
+                    <td class="w3-quarter w3-text-gray"><i class="fas fa-laptop-code fa-lg"></i> + <i class="fas fa-mug-hot fa-lg"></i></td>
                 </tr>
                 <tr>
                     <td class="w3-quarter"><b>Semántica de la URL</b></td>
-                    <td class="w3-quarter"><img src="images/smiley-regular_640.png" height="25px"></td>
-                    <td class="w3-quarter"><img src="images/en-construccion.png" height="25px"></td>
-                    <td class="w3-quarter"><img src="images/en-construccion.png" height="25px"></td>
+                    <td class="w3-quarter"><i class="fas fa-star w3-text-yellow"></i><i class="far fa-star w3-text-gray"><i class="far fa-star w3-text-gray"></td>
+                    <td class="w3-quarter w3-text-gray"><i class="fas fa-laptop-code fa-lg"></i> + <i class="fas fa-mug-hot fa-lg"></i></td>
+                    <td class="w3-quarter w3-text-gray"><i class="fas fa-laptop-code fa-lg"></i> + <i class="fas fa-mug-hot fa-lg"></i></td>
                 </tr>
                 <tr>
                     <td class="w3-quarter"><b>Seguridad</b></td>
-                    <td class="w3-quarter"><img src="images/smiley-regular_640.png" height="25px"></td>
-                    <td class="w3-quarter"><img src="images/en-construccion.png" height="25px"></td>
-                    <td class="w3-quarter"><img src="images/en-construccion.png" height="25px"></td>
+                    <td class="w3-quarter"><i class="fas fa-star w3-text-yellow"></i><i class="fas fa-star w3-text-yellow"><i class="far fa-star w3-text-gray"></td>
+                    <td class="w3-quarter w3-text-gray"><i class="fas fa-laptop-code fa-lg"></i> + <i class="fas fa-mug-hot fa-lg"></i></td>
+                    <td class="w3-quarter w3-text-gray"><i class="fas fa-laptop-code fa-lg"></i> + <i class="fas fa-mug-hot fa-lg"></i></td>
                 </tr>
                 <tr>
                     <td class="w3-quarter"><b>Sistema de control de versiones</b></td>
-                    <td class="w3-quarter"><img src="images/smiley-good_640.png" height="25px"></td>
-                    <td class="w3-quarter"><img src="images/en-construccion.png" height="25px"></td>
-                    <td class="w3-quarter"><img src="images/en-construccion.png" height="25px"></td>
+                    <td class="w3-quarter"><i class="fas fa-star w3-text-yellow"></i><i class="fas fa-star w3-text-yellow"><i class="fas fa-star w3-text-yellow"></td>
+                    <td class="w3-quarter w3-text-gray"><i class="fas fa-laptop-code fa-lg"></i> + <i class="fas fa-mug-hot fa-lg"></i></td>
+                    <td class="w3-quarter w3-text-gray"><i class="fas fa-laptop-code fa-lg"></i> + <i class="fas fa-mug-hot fa-lg"></i></td>
                 </tr>
                 <tr>
                     <td class="w3-quarter"></td>
                     <td class="w3-quarter"><a href="version-basica.php" class="w3-btn w3-win8-mauve w3-round w3-hover-black w3-small">+ Info</a></td>
-                    <td class="w3-quarter"><img src="images/en-construccion.png" height="25px"></td>
-                    <td class="w3-quarter"><img src="images/en-construccion.png" height="25px"></td>
+                    <td class="w3-quarter w3-text-gray"><i class="fas fa-laptop-code fa-lg"></i> + <i class="fas fa-mug-hot fa-lg"></i></td>
+                    <td class="w3-quarter w3-text-gray"><i class="fas fa-laptop-code fa-lg"></i> + <i class="fas fa-mug-hot fa-lg"></i></td>
                 </tr>
                 
             </table>
