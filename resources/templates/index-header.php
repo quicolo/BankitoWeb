@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-win8.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/4358b9453c.js" crossorigin="anonymous"></script>
     <style>
         html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
         .mySlides {display:none}
@@ -19,16 +19,16 @@
         <div class="w3-top">
             <div class="w3-row w3-large w3-light-grey">
                 <div class="w3-col s3">
-                    <a href="index.php" class="w3-button w3-block w3-hover-black">Inicio</a>
+                    <a href="index.php" class="w3-button w3-block w3-hover-black"><i class="fas fa-chart-line"></i> Inicio</a>
                 </div>
                 <div class="w3-col s3">
-                    <a href="index.php#versiones" class="w3-button w3-block w3-hover-black">Versiones</a>
+                    <a href="index.php#versiones" class="w3-button w3-block w3-hover-black"><i class="fas fa-code-branch"></i> Versiones</a>
                 </div>
                 <div class="w3-col s3">
-                    <a href="registro-form.php" class="w3-button w3-block w3-hover-black">Regístrate</a>
+                    <a href="registro-form.php" class="w3-button w3-block w3-hover-black"><i class="fas fa-clipboard-list"></i> Regístrate</a>
                 </div>
                 <div class="w3-col s3">
-                    <a href="login-form.php" class="w3-button w3-block w3-hover-black">Iniciar sesión</a>
+                    <a href="login-form.php" class="w3-button w3-block w3-hover-black"><i class="fas fa-sign-in-alt"></i> Iniciar sesión</a>
                 </div>
             </div>
         </div>

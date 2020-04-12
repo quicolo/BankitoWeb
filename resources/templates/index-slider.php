@@ -1,5 +1,5 @@
 <div class="w3-panel">
-    <h1 class="w3-animate-left"><b>BANKITO</b></h1>
+    <h1 class="w3-animate-left"><i class="fas fa-chart-line"></i><b> B a n k i t o</b></h1>
     <p class="w3-animate-right">Invierte en tu futuro</p>
 </div>
 
