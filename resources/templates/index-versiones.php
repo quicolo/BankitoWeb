@@ -5,7 +5,7 @@
             <p class="w3-padding-16">Bankito presenta diferentes versiones que se adaptan a tu ritmo de aprendizaje</p>
 
             <!-- Table -->
-            <table class="w3-table-all w3-centered w3-card w3-hoverable">
+            <table class="w3-table-all w3-centered w3-card w3-hoverable w3-animate-opacity">
                 <tr>
                     <th class="w3-quarter w3-black">Características principales</th>
                     <th class="w3-quarter w3-win8-mauve">Básica</th>

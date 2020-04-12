@@ -11,6 +11,9 @@ iniciaSesionSegura();
     <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Inicia sesión en Bankito</span>
 </div>
 
+<div class="w3-center w3-padding-16" id="registro">
+    <img src="images/img_avatar4.png" alt="Avatar" style="width:20%" class="w3-circle">
+</div>
 <!-- Ventana Login Emergente -->
 <div id="loginEmergente" class="w3-modal">
     <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:400px">

@@ -20,7 +20,7 @@ iniciaSesionSegura();
         <div class="w3-container">
             <p>Desarrollada en HTML/CSS, haciendo <b>uso del framework  
             <a href="https://www.w3schools.com/w3css/default.asp">W3.CSS</a></b></p>
-            <p>W3.CSS es un framework CSS adaptativo (responsive), ligero, rápido y fácil de aprender
+            <p>W3.CSS es un framework CSS adaptativo (responsive), ligero, rápido, fácil de aprender y con una documentación excelente.
             desarrollado por <a href="https://www.w3schools.com/">w3schools</a></p>
         </div>
     </div>
