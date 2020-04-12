@@ -2,7 +2,11 @@
 
 function iniciaSesionSegura() {
     session_start();
-    if (isset($_SESSION['ULTIMO_ACCESO']) && (time() - $_SESSION['ULTIMO_ACCESO'] > MINUTOS_CADUCA_SESSION*60)) {
+    
+    // Si no está definida la constante se toman 30 mintutos como valor por defecto
+    $duracionMaxima = defined('MINUTOS_CADUCA_SESION') ?? 30;
+
+    if (isset($_SESSION['ULTIMO_ACCESO']) && (time() - $_SESSION['ULTIMO_ACCESO'] > $duracionMaxima*60)) {
         cierraSesionSegura();
     }
     $_SESSION['ULTIMO_ACCESO'] = time();

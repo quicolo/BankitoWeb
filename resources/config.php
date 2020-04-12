@@ -16,7 +16,7 @@ define("VENDOR_PATH", APP_ROOT_PATH . '/vendor');
 
 // Constantes de comportamiento de la aplicación
 define("MINUTOS_CADUCA_TOKEN", 30);
-define("MINUTOS_CADUCA_SESSION", 30);
+define("MINUTOS_CADUCA_SESION", 30);
 
 // Configuración del intérprete de PHP según en nivel de errores
 if (ERROR_LEVEL == "DEPURACION") {
