@@ -1,6 +1,8 @@
 <?php
 function imprimePorConsola( $data ){
-  echo '<script>';
-  echo 'console.log('. json_encode( $data ) .')';
-  echo '</script>';
+  if (defined("LOG_CONSOLA") and LOG_CONSOLA=="ON") {
+    echo '<script>';
+    echo 'console.log('. json_encode( $data ) .')';
+    echo '</script>';
+  }
 }

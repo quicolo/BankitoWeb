@@ -47,7 +47,7 @@ if (isset($_POST)) {
     }
 
     if (isset($_SESSION['usuario']))
-        header('Location: principal.php');
+        header('Location: principal-posicion-global.php');
     else
         header('Location: login-form.php');
 }

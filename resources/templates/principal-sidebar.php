@@ -4,10 +4,11 @@
     <i class="fa fa-remove"></i>
   </a>
   <h4 class="w3-bar-item"><b>Menu</b></h4>
-  <a class="w3-bar-item w3-button w3-hover-teal" href="#">Link</a>
-  <a class="w3-bar-item w3-button w3-hover-teal" href="#">Link</a>
-  <a class="w3-bar-item w3-button w3-hover-teal" href="#">Link</a>
-  <a class="w3-bar-item w3-button w3-hover-teal" href="#">Link</a>
+  <a class="w3-bar-item w3-button w3-hover-teal" href="principal-posicion-global.php">Posición global</a>
+  <a class="w3-bar-item w3-button w3-hover-teal" href="#">Cuentas</a>
+  <a class="w3-bar-item w3-button w3-hover-teal" href="#">Movimientos</a>
+  <a class="w3-bar-item w3-button w3-hover-teal" href="#">Operaciones</a>
+  <a class="w3-bar-item w3-button w3-hover-teal" href="principal-mi-perfil-form.php">Mi perfil</a>
 </nav>
 
 <!-- Overlay effect when opening sidebar on small screens -->

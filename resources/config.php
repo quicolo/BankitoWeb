@@ -26,7 +26,6 @@ if (ERROR_LEVEL == "DEPURACION") {
     ini_set("error_reporting", "false");
 }
 
-// Variables para la construcción del array config
 $dbName = "";
 $username = "";
 $password = "";

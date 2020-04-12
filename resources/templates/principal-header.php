@@ -20,10 +20,10 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 <body>
 <!-- Navbar -->
 <div class="w3-top">
-  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+  <div class="w3-mobile w3-theme w3-top w3-left-align w3-large">
     <a class="w3-bar-item w3-button w3-left w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
-    <a href="logout.php" class="w3-bar-item w3-button w3-right w3-theme-l1">Cerrar sesión</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Bienvenido a Bankito, <?=$_SESSION['usuario']['nombre']?? ""; ?></a>
+    <a href="logout.php" class="w3-bar-item w3-button w3-right w3-hover-teal w3-theme-l1">Cerrar sesión</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-teal">Bienvenid@ a Bankito<?=", ".$_SESSION['cliente']['nombre']?? ""; ?></a>
     <!--
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Values</a>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">News</a>

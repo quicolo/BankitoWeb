@@ -1,11 +1,15 @@
 
   <footer id="myFooter">
     <div class="w3-container w3-theme-l2 w3-padding-32">
-      <h4>Footer</h4>
+      <h5>Bankito</h5>
     </div>
 
     <div class="w3-container w3-theme-l1">
-      <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+      <p class="w3-right">Desarrollado por Enrique Royo Sánchez &copy;
+        <?php 
+          echo date("Y");
+        ?>
+      </p>
     </div>
   </footer>
 

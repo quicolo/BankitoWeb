@@ -77,13 +77,7 @@ if (isset($_SESSION['error_registro'])) {
 
 <?php
 if (isset($_SESSION['error_registro'])) {
-    unset($_SESSION['error_registro']);
-    unset($_SESSION['nombre']);
-    unset($_SESSION['apellido1']);
-    unset($_SESSION['apellido2']);
-    unset($_SESSION['nif']);
-    unset($_SESSION['email']);
-    unset($_SESSION['usuario']);
+    session_unset();
 }
 ?>
 

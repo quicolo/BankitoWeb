@@ -8,10 +8,10 @@ require LIBRARY_PATH . '/maneja-consola.php';
 require LIBRARY_PATH . '/maneja-base-datos.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
-imprimePorConsola('Fuera');
+
 // Si se estableció el password es que no hubo errores
 if (isset($_SESSION['password'])) {
-    imprimePorConsola('Dentro');
+
     // Comprobamos si existe el cliente o el nombre de usuario previamente
     $resultCliente = buscaClientePorNif($dbConexion, $_SESSION['nif']);
     $resultUsuario = buscaUsuarioPorNombre($dbConexion, $_SESSION['usuario']);

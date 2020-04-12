@@ -18,16 +18,16 @@
         <div class="w3-top">
             <div class="w3-row w3-large w3-light-grey">
                 <div class="w3-col s3">
-                    <a href="index.php" class="w3-button w3-block">Inicio</a>
+                    <a href="index.php" class="w3-button w3-block w3-hover-teal">Inicio</a>
                 </div>
                 <div class="w3-col s3">
-                    <a href="index.php#versiones" class="w3-button w3-block">Versiones</a>
+                    <a href="index.php#versiones" class="w3-button w3-block w3-hover-teal">Versiones</a>
                 </div>
                 <div class="w3-col s3">
-                    <a href="registro-form.php" class="w3-button w3-block">Regístrate</a>
+                    <a href="registro-form.php" class="w3-button w3-block w3-hover-teal">Regístrate</a>
                 </div>
                 <div class="w3-col s3">
-                    <a href="login-form.php" class="w3-button w3-block">Iniciar sesión</a>
+                    <a href="login-form.php" class="w3-button w3-block w3-hover-teal">Iniciar sesión</a>
                 </div>
             </div>
         </div>
