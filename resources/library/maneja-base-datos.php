@@ -1,5 +1,5 @@
 <?php
-include LIBRARY_PATH . '/maneja-consola.php';
+include_once LIBRARY_PATH . '/maneja-consola.php';
 
 /***************************************/
 /**********   TABLA CLIENTE   **********/

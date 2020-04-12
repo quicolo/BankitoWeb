@@ -1,6 +1,8 @@
 <?php
 require_once '../resources/config.php';
+include LIBRARY_PATH . '/maneja-sesion.php';
 
+iniciaSesionSegura();
 // Borramos el contenido de la sesión por seguridad
 if (!isset($_SESSION['errorCambiaPass'])) {
     session_unset();

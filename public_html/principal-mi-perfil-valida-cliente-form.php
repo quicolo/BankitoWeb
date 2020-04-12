@@ -4,6 +4,8 @@ include LIBRARY_PATH . '/maneja-base-datos.php';
 include LIBRARY_PATH . '/maneja-sesion.php';
 include LIBRARY_PATH . '/valida-entrada.php';
 
+iniciaSesionSegura();
+
 if (!isset($_SESSION['usuario']) or $_SESSION['usuario'] == null) {
     cierraSesionSegura();
     header('Location: login-form.php');

@@ -1,7 +1,9 @@
 <?php
 require_once '../resources/config.php';
 include LIBRARY_PATH . '/maneja-base-datos.php';
-// include LIBRARY_PATH . '/maneja-consola.php';
+include LIBRARY_PATH . '/maneja-sesion.php';
+
+iniciaSesionSegura();
 
 if (!isset($_SESSION['usuario']) or $_SESSION['usuario'] == null) {
     header('Location: login-form.php');

@@ -3,7 +3,7 @@ require_once '../resources/config.php';
 include TEMPLATES_PATH . '/index-header.php';
 include LIBRARY_PATH . '/maneja-sesion.php';
 
-cierraSesionSegura();
+iniciaSesionSegura();
 ?>
 
 <!-- Inicia Sesión -->

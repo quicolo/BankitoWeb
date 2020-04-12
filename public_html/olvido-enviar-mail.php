@@ -8,6 +8,7 @@ require LIBRARY_PATH . '/maneja-base-datos.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 
+iniciaSesionSegura();
 // Si se estableció el NIF/NIE es que no hubo errores
 if (isset($_SESSION['nif'])) {
 

@@ -2,6 +2,9 @@
 
 require_once '../resources/config.php';
 include LIBRARY_PATH . '/valida-entrada.php';
+include LIBRARY_PATH . '/maneja-sesion.php';
+
+iniciaSesionSegura();
 
 // Recoger datos del formulario
 if (isset($_POST)) {

@@ -16,7 +16,7 @@ define("VENDOR_PATH", APP_ROOT_PATH . '/vendor');
 
 // Constantes de comportamiento de la aplicación
 define("MINUTOS_CADUCA_TOKEN", 30);
-
+define("MINUTOS_CADUCA_SESSION", 30);
 
 // Configuración del intérprete de PHP según en nivel de errores
 if (ERROR_LEVEL == "DEPURACION") {
@@ -48,6 +48,4 @@ define("BASE_URL", PROTOCOLO . '://' . $host . '/' . APP_FOLDER . '/');
 $dbConexion = mysqli_connect($host, $userName, $password, $dbName);
 mysqli_query($dbConexion, "SET NAMES 'utf8'");
 
-// Iniciar la sesión
-session_start();
 ?>
