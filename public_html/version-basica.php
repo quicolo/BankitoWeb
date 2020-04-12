@@ -14,7 +14,7 @@ iniciaSesionSegura();
     <p>A continuación se detallan los elementos de la <b>versión básica</b> de Bankito y la 
     descripción de cada uno de ellos.</p>
     <div class="w3-card-4 w3-margin-bottom">
-        <header class="w3-container w3-teal">
+        <header class="w3-container w3-win8-indigo">
             <h2>Interfaz gráfica</h2>
         </header>
         <div class="w3-container">
@@ -25,7 +25,7 @@ iniciaSesionSegura();
         </div>
     </div>
     <div class="w3-card-4 w3-margin-bottom">
-        <header class="w3-container w3-indigo">
+        <header class="w3-container w3-win8-violet">
             <h2>Experiencia de usuario</h2>
         </header>
         <div class="w3-container">
@@ -34,7 +34,7 @@ iniciaSesionSegura();
         </div>
     </div>
     <div class="w3-card-4 w3-margin-bottom">
-        <header class="w3-container w3-brown">
+        <header class="w3-container w3-win8-magenta">
             <h2>Semántica de la URL</h2>
         </header>
         <div class="w3-container">
@@ -46,7 +46,7 @@ iniciaSesionSegura();
         </div>
     </div>
     <div class="w3-card-4 w3-margin-bottom">
-        <header class="w3-container w3-green">
+        <header class="w3-container w3-win8-crimson">
             <h2>Paradigma de programación</h2>
         </header>
         <div class="w3-container">
@@ -57,7 +57,7 @@ iniciaSesionSegura();
         </div>
     </div>
     <div class="w3-card-4 w3-margin-bottom">
-        <header class="w3-container w3-deep-purple">
+        <header class="w3-container w3-win8-red">
             <h2>Diseño del código</h2>
         </header>
         <div class="w3-container">
@@ -67,7 +67,7 @@ iniciaSesionSegura();
         </div>
     </div>
     <div class="w3-card-4 w3-margin-bottom">
-        <header class="w3-container w3-dark-grey">
+        <header class="w3-container w3-win8-orange">
             <h2>Seguridad</h2>
         </header>
         <div class="w3-container">
@@ -82,7 +82,7 @@ iniciaSesionSegura();
         </div>
     </div>
     <div class="w3-card-4 w3-margin-bottom">
-        <header class="w3-container w3-teal">
+        <header class="w3-container w3-win8-amber">
             <h2>Depuración del código</h2>
         </header>
         <div class="w3-container">
@@ -91,7 +91,7 @@ iniciaSesionSegura();
         </div>
     </div>  
     <div class="w3-card-4 w3-margin-bottom">
-        <header class="w3-container w3-indigo">
+        <header class="w3-container w3-win8-yellow">
             <h2>Control de versiones</h2>
         </header>
         <div class="w3-container">
@@ -101,7 +101,7 @@ iniciaSesionSegura();
         </div>
     </div> 
     <div class="w3-card-4 w3-margin-bottom">
-        <header class="w3-container w3-brown">
+        <header class="w3-container w3-win8-brown">
             <h2>Entornos de ejecución</h2>
         </header>
         <div class="w3-container">
@@ -113,7 +113,7 @@ iniciaSesionSegura();
         </div>
     </div> 
     <div class="w3-card-4 w3-margin-bottom">
-        <header class="w3-container w3-green">
+        <header class="w3-container w3-win8-olive">
             <h2>Dependencias externas</h2>
         </header>
         <div class="w3-container">
@@ -126,7 +126,7 @@ iniciaSesionSegura();
         </div>
     </div> 
     <div class="w3-card-4 w3-margin-bottom">
-        <header class="w3-container w3-deep-purple">
+        <header class="w3-container w3-win8-steel">
             <h2>Software utilizado para el desarrollo</h2>
         </header>
         <div class="w3-container">

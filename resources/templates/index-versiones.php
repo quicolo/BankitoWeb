@@ -5,12 +5,12 @@
             <p class="w3-padding-16">Bankito presenta diferentes versiones que se adaptan a tu ritmo de aprendizaje</p>
 
             <!-- Table -->
-            <table class="w3-table-all w3-centered w3-card">
+            <table class="w3-table-all w3-centered w3-card w3-hoverable">
                 <tr>
-                    <th class="w3-black w3-quarter">Características principales</th>
-                    <th class="w3-green w3-quarter">Básica</th>
-                    <th class="w3-deep-purple w3-quarter">Intermedia</th>
-                    <th class="w3-red w3-quarter">Avanzada</th>
+                    <th class="w3-quarter w3-black">Características principales</th>
+                    <th class="w3-quarter w3-win8-mauve">Básica</th>
+                    <th class="w3-quarter w3-win8-taupe">Intermedia</th>
+                    <th class="w3-quarter w3-win8-sienna">Avanzada</th>
                 </tr>
                 <tr>
                     <td class="w3-quarter"><b>Paradigma de programación</b></td>
@@ -56,7 +56,7 @@
                 </tr>
                 <tr>
                     <td class="w3-quarter"></td>
-                    <td class="w3-quarter"><a href="version-basica.php" class="w3-btn w3-green w3-round w3-hover-black w3-small">+ Info</a></td>
+                    <td class="w3-quarter"><a href="version-basica.php" class="w3-btn w3-win8-mauve w3-round w3-hover-black w3-small">+ Info</a></td>
                     <td class="w3-quarter"><img src="images/en-construccion.png" height="25px"></td>
                     <td class="w3-quarter"><img src="images/en-construccion.png" height="25px"></td>
                 </tr>

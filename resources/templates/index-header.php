@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-win8.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
@@ -18,16 +19,16 @@
         <div class="w3-top">
             <div class="w3-row w3-large w3-light-grey">
                 <div class="w3-col s3">
-                    <a href="index.php" class="w3-button w3-block w3-hover-teal">Inicio</a>
+                    <a href="index.php" class="w3-button w3-block w3-hover-black">Inicio</a>
                 </div>
                 <div class="w3-col s3">
-                    <a href="index.php#versiones" class="w3-button w3-block w3-hover-teal">Versiones</a>
+                    <a href="index.php#versiones" class="w3-button w3-block w3-hover-black">Versiones</a>
                 </div>
                 <div class="w3-col s3">
-                    <a href="registro-form.php" class="w3-button w3-block w3-hover-teal">Regístrate</a>
+                    <a href="registro-form.php" class="w3-button w3-block w3-hover-black">Regístrate</a>
                 </div>
                 <div class="w3-col s3">
-                    <a href="login-form.php" class="w3-button w3-block w3-hover-teal">Iniciar sesión</a>
+                    <a href="login-form.php" class="w3-button w3-block w3-hover-black">Iniciar sesión</a>
                 </div>
             </div>
         </div>
