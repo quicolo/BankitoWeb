@@ -32,3 +32,6 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Partners</a>-->
   </div>
 </div>
+
+<!-- Contenedor principal, se cierra en el footer -->
+<div class="w3-main" style="margin-left:250px; margin-top:64px">

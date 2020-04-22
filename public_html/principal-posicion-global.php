@@ -14,12 +14,9 @@ else {
     if($resultCliente && mysqli_num_rows($resultCliente)==1) {
       $_SESSION['cliente'] = mysqli_fetch_assoc($resultCliente);
     }
-    include TEMPLATES_PATH . '/principal-header.php';
     include TEMPLATES_PATH . '/principal-sidebar.php';
+    include TEMPLATES_PATH . '/principal-header.php';
 ?>
-
-<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
-<div class="w3-main" style="margin-left:250px">
 
   <div class="w3-row w3-padding-64">
     <div class="w3-twothird w3-container">

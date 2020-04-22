@@ -1,6 +1,6 @@
 
   <footer id="myFooter">
-    <div class="w3-container w3-theme-l2 w3-padding-32">
+    <div class="w3-container w3-theme-l2 w3-padding-16 w3-margin-top">
       <h5>Bankito</h5>
     </div>
 

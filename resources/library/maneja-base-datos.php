@@ -100,9 +100,9 @@ function insertaRegistroUsuario($dbConexion, $token, $ip, $nombre, $ape1, $ape2,
 }
 
 function buscaRegistroUsuarioPorToken($dbConexion, $token) {
-    $queryRegistro = "SELECT * FROM registro_usuario WHERE token = '" . $token . "'";
-    imprimePorConsola($queryRegistro);
-    $result =  mysqli_query($dbConexion, $queryRegistro);
+    $insertCuentas = "SELECT * FROM registro_usuario WHERE token = '" . $token . "'";
+    imprimePorConsola($insertCuentas);
+    $result =  mysqli_query($dbConexion, $insertCuentas);
     imprimePorConsola($result);
     return $result;
 }
@@ -136,6 +136,54 @@ function buscaRestablecePassPorToken($dbConexion, $token) {
     $queryToken = "SELECT * FROM restablece_pass WHERE token = '" . $token . "'";
     imprimePorConsola($queryToken);
     $result =  mysqli_query($dbConexion, $queryToken);
+    imprimePorConsola($result);
+    return $result;
+}
+
+/***************************************/
+/**********   TABLA CUENTA    **********/
+/***************************************/
+function buscaCuentasPorIdUsuario($dbConexion, $idUsuario) {
+    $queryCuentas = "SELECT * FROM cuenta WHERE usuario_id_usuario = " . $idUsuario;
+    imprimePorConsola($queryCuentas);
+    $result =  mysqli_query($dbConexion, $queryCuentas);
+    imprimePorConsola($result);
+    return $result;
+}
+
+function buscaCuentaPorEntidadSucursal($dbConexion, $idEntidad, $idSucursal) {
+    $queryCuentas = "SELECT * FROM cuenta WHERE num_entidad = '$idEntidad' and num_sucursal = '$idSucursal' order by num_cuenta desc";
+    imprimePorConsola($queryCuentas);
+    $result =  mysqli_query($dbConexion, $queryCuentas);
+    imprimePorConsola($result);
+    return $result;
+}
+
+
+function creaCuentaParaIdUsuario($dbConexion, $entidad, $sucursal, $dc, $numcc, $idUsuario) {
+    $insertCuentas = "INSERT INTO cuenta (num_entidad, num_sucursal, num_digito_control, num_cuenta, saldo, fecha_creacion, usuario_id_usuario) VALUES ($entidad, $sucursal, $dc, $numcc, 0.0, now(), $idUsuario)";
+    imprimePorConsola($insertCuentas);
+    $result =  mysqli_query($dbConexion, $insertCuentas);
+    imprimePorConsola($result);
+    return $result;
+}
+
+function actualizaSaldoCuentaIdCuenta($dbConexion, $idCuenta, $saldo) {
+    $insertCuentas = "UPDATE cuenta SET saldo=$saldo WHERE id_cuenta=$idCuenta";
+    
+    imprimePorConsola($insertCuentas);
+    $result =  mysqli_query($dbConexion, $insertCuentas);
+    imprimePorConsola($result);
+    return $result;
+}
+
+function borraCuentaPorIdCuenta($dbConexion, $idCuenta) {
+    // Los movimientos de la cuenta se borran automáticamente
+    // hay un ON DELETE CASCADE en la clave ajena
+    $deleteCuentas = "DELETE FROM cuenta WHERE id_cuenta=$idCuenta";
+    
+    imprimePorConsola($deleteCuentas);
+    $result =  mysqli_query($dbConexion, $deleteCuentas);
     imprimePorConsola($result);
     return $result;
 }

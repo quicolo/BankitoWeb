@@ -1,15 +1,20 @@
 <?php
+include_once LIBRARY_PATH . '/maneja-consola.php';
 
 function iniciaSesionSegura() {
     session_start();
     
     // Si no está definida la constante se toman 30 mintutos como valor por defecto
-    $duracionMaxima = defined('MINUTOS_CADUCA_SESION') ?? 30;
+    $duracionMaxima = 30;
+    if (defined('MINUTOS_CADUCA_SESION'))
+        $duracionMaxima = MINUTOS_CADUCA_SESION;
 
     if (isset($_SESSION['ULTIMO_ACCESO']) && (time() - $_SESSION['ULTIMO_ACCESO'] > $duracionMaxima*60)) {
         cierraSesionSegura();
     }
-    $_SESSION['ULTIMO_ACCESO'] = time();
+    else {
+        $_SESSION['ULTIMO_ACCESO'] = time();
+    }
 }
 
 

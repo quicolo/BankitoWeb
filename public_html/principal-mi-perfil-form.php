@@ -10,8 +10,9 @@ if (!isset($_SESSION['usuario']) or $_SESSION['usuario'] == null) {
     header('Location: login-form.php');
 }
 else {
-    include TEMPLATES_PATH . '/principal-header.php';
     include TEMPLATES_PATH . '/principal-sidebar.php';
+    include TEMPLATES_PATH . '/principal-header.php';
+    
 
     //Rescatamos los datos de cliente y de usuario
     $nomUsuario = $_SESSION['usuario']['nombre'];
@@ -25,11 +26,10 @@ else {
 ?>
 
 
-<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
-<div class="w3-main" style="margin-left:250px">
+
 
   <!-- Fila con los datos del cliente y la imagen -->
-  <div class="w3-row w3-padding-64">
+  <div class="w3-row">
     <?php
     if (isset($_SESSION['actualiza_ok'])) {
         unset($_SESSION['actualiza_ok']);
@@ -59,10 +59,16 @@ else {
         <?php
     }
     ?>
-
     <div class="w3-twothird w3-container">
       <h1 class="w3-text-teal">Mi perfil
       </h1>
+      <hr>
+    </div>
+    <div class="w3-third w3-container">
+    </div>
+  </div>
+  <div class="w3-row">
+    <div class="w3-twothird w3-container">
       <form class="w3-container" method="post" action="principal-mi-perfil-valida-cliente-form.php">
         <div class="w3-row-padding w3-padding">
           <div class="w3-col m6 l6">
