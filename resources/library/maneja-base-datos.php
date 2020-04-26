@@ -169,10 +169,19 @@ function creaCuentaParaIdUsuario($dbConexion, $entidad, $sucursal, $dc, $numcc, 
 }
 
 function actualizaSaldoCuentaIdCuenta($dbConexion, $idCuenta, $saldo) {
-    $insertCuentas = "UPDATE cuenta SET saldo=$saldo WHERE id_cuenta=$idCuenta";
+    $actualizaCuenta = "UPDATE cuenta SET saldo=$saldo WHERE id_cuenta=$idCuenta";
     
-    imprimePorConsola($insertCuentas);
-    $result =  mysqli_query($dbConexion, $insertCuentas);
+    imprimePorConsola($actualizaCuenta);
+    $result =  mysqli_query($dbConexion, $actualizaCuenta);
+    imprimePorConsola($result);
+    return $result;
+}
+
+function actualizaAliasCuentaIdCuenta($dbConexion, $idCuenta, $alias) {
+    $actualizaCuenta = "UPDATE cuenta SET alias='$alias' WHERE id_cuenta=$idCuenta";
+    
+    imprimePorConsola($actualizaCuenta);
+    $result =  mysqli_query($dbConexion, $actualizaCuenta);
     imprimePorConsola($result);
     return $result;
 }

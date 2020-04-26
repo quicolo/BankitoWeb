@@ -60,3 +60,12 @@ function calculaDcPorCadenas($entidad, $sucursal, $cuenta){
 
     return $dc;
 }
+
+function formateaCuenta($entidad, $sucursal, $dc, $cuenta, $separador='-') {
+    $cadEntidad = str_pad($entidad, 4, "0", STR_PAD_LEFT);
+    $cadSucursal = str_pad($sucursal, 4, "0", STR_PAD_LEFT);
+    $cadDc = str_pad($dc, 2, "0", STR_PAD_LEFT);
+    $cadCuenta = str_pad($cuenta, 10, "0", STR_PAD_LEFT);
+
+    return $cadEntidad.$separador.$cadSucursal.$separador.$cadDc.$separador.$cadCuenta;
+}

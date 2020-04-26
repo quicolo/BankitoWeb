@@ -2,6 +2,7 @@
 require_once '../resources/config.php';
 include LIBRARY_PATH . '/maneja-base-datos.php';
 include LIBRARY_PATH . '/maneja-sesion.php';
+include LIBRARY_PATH . '/maneja-mensajes-form.php';
 
 iniciaSesionSegura();
 
@@ -31,33 +32,7 @@ else {
   <!-- Fila con los datos del cliente y la imagen -->
   <div class="w3-row">
     <?php
-    if (isset($_SESSION['actualiza_ok'])) {
-        unset($_SESSION['actualiza_ok']);
-        ?>
-        <div class="w3-container">
-            <div class="w3-card w3-green w3-padding">
-                <h1>Datos actualizados correctamente</H1>
-            </div>
-            <br>
-        </div>  
-        <?php
-    }
-    ?>
-
-    <?php
-    if (isset($_SESSION['errores'])) {
-        ?>
-        <div class="w3-container">
-            <div class="w3-card w3-black w3-padding">
-                <h1>¡UOPS!</H1>
-                <?php
-                echo implode("<br>", $_SESSION['errores']);
-                unset($_SESSION['errores']);
-                ?>
-            </div>
-        </div>  
-        <?php
-    }
+      muestraMensajes();
     ?>
     <div class="w3-twothird w3-container">
       <h1 class="w3-text-teal">Mi perfil
@@ -69,7 +44,7 @@ else {
   </div>
   <div class="w3-row">
     <div class="w3-twothird w3-container">
-      <form class="w3-container" method="post" action="principal-mi-perfil-valida-cliente-form.php">
+      <form class="w3-container" method="post" action="principal-mi-perfil-valida-form.php">
         <div class="w3-row-padding w3-padding">
           <div class="w3-col m6 l6">
               <label>Nombre</label>
@@ -125,3 +100,4 @@ else {
     include TEMPLATES_PATH . '/principal-footer.php';
 }
 ?>
+

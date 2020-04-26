@@ -91,10 +91,12 @@ if (isset($_POST)) {
     $_SESSION['direccionIp'] = $_SERVER['REMOTE_ADDR'] ?? "0.0.0.0";
 
     if (empty($errores)) {
+        $_SESSION['resultado'] = 'ok';
         $_SESSION['password'] = $password1Form;
         header("Location: registro-enviar-mail.php");
     } else {
-        $_SESSION['error_registro'] = $errores;
+        $_SESSION['resultado'] = 'error';
+        $_SESSION['errores'] = $errores;
         header("Location: registro-form.php");
     }
 }

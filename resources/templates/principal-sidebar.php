@@ -6,7 +6,6 @@
   <h4 class="w3-bar-item"><b>Menu</b></h4>
   <a class="w3-bar-item w3-button w3-hover-teal" href="principal-posicion-global.php"><i class="fas fa-university fa-fw"></i> Posición global</a>
   <a class="w3-bar-item w3-button w3-hover-teal" href="principal-cuenta.php"><i class="fas fa-money-check fa-fw"></i> Cuentas</a>
-  <a class="w3-bar-item w3-button w3-hover-teal" href="#"><i class="fas fa-wave-square fa-fw"></i> Movimientos</a>
   <a class="w3-bar-item w3-button w3-hover-teal" href="#"><i class="fas fa-tasks fa-fw"></i> Operaciones</a>
   <a class="w3-bar-item w3-button w3-hover-teal" href="principal-mi-perfil-form.php"><i class="fas fa-id-badge fa-fw"></i> Mi perfil</a>
 </nav>

@@ -2,6 +2,7 @@
 require_once '../resources/config.php';
 include TEMPLATES_PATH . '/index-header.php';
 include LIBRARY_PATH . '/maneja-sesion.php';
+include LIBRARY_PATH . '/maneja-mensajes-form.php';
 
 iniciaSesionSegura();
 ?>
@@ -20,26 +21,17 @@ $nif = "";
 $email = "";
 $usuario = "";
 
-if (isset($_SESSION['error_registro'])) {
-    ?>
-    <div class="w3-container">
-        <div class="w3-card w3-black w3-padding">
-            <h1>¡UOPS!</H1>
-            <?php
-            echo implode("<br>", $_SESSION['error_registro']);
-            $nombre = $_SESSION['nombre'];
-            $apellido1 = $_SESSION['apellido1'];
-            $apellido2 = $_SESSION['apellido2'];
-            $nif = $_SESSION['nif'];
-            $email = $_SESSION['email'];
-            $usuario = $_SESSION['usuario'];
-            ?>
-        </div>
-    </div>  
-    <?php
+
+if (isset($_SESSION['errores'])) {
+    muestraMensajes(false);
+    $nombre = $_SESSION['nombre'];
+    $apellido1 = $_SESSION['apellido1'];
+    $apellido2 = $_SESSION['apellido2'];
+    $nif = $_SESSION['nif'];
+    $email = $_SESSION['email'];
+    $usuario = $_SESSION['usuario'];
 }
 ?>
-
 
 <form class="w3-container" method="post" action="registro-valida-form.php">
     <div class="w3-section">
@@ -79,7 +71,7 @@ if (isset($_SESSION['error_registro'])) {
 </form>
 
 <?php
-if (isset($_SESSION['error_registro'])) {
+if (isset($_SESSION['errores'])) {
     session_unset();
 }
 ?>

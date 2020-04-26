@@ -43,9 +43,11 @@ if (isset($_POST)) {
         $_SESSION['email'] = $emailForm;
         $_SESSION['usuario'] = $usuarioForm;
         $_SESSION['direccionIp'] = $_SERVER['REMOTE_ADDR'] ?? "0.0.0.0";
+        $_SESSION['resultado'] = 'ok';
         header("Location: olvido-enviar-mail.php");
     } else {
-        $_SESSION['error_registro'] = $errores;
+        $_SESSION['resultado'] = 'error';
+        $_SESSION['errores'] = $errores;
         header("Location: olvido-form.php");
     }
 }
