@@ -18,7 +18,7 @@ function muestraMensajes($ocultarMsg = true) {
         function ocultarMsgOk() {
           document.getElementById('ok').style.display = 'none';
         } 
-        setInterval(ocultarMsgOk, 3500);
+        setInterval(ocultarMsgOk, 5000);
       </script>
     <?php
     } 
@@ -42,7 +42,7 @@ function muestraMensajes($ocultarMsg = true) {
         function ocultarMsgError(){
           document.getElementById('errores').style.display = 'none';
         } 
-        setInterval(ocultarMsgError, 3500);
+        setInterval(ocultarMsgError, 5000);
       </script>
     <?php
     }

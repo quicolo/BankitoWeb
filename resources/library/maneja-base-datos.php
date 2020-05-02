@@ -143,6 +143,27 @@ function buscaRestablecePassPorToken($dbConexion, $token) {
 /***************************************/
 /**********   TABLA CUENTA    **********/
 /***************************************/
+function buscaCuentaPorIdCuenta($dbConexion, $idCuenta) {
+    $queryCuentas = "SELECT * FROM cuenta WHERE id_cuenta = " . $idCuenta;
+    imprimePorConsola($queryCuentas);
+    $result =  mysqli_query($dbConexion, $queryCuentas);
+    imprimePorConsola($result);
+    return $result;
+}
+
+function cuentaCuentasPorIdUsuario($dbConexion, $idUsuario) {
+    $queryCuentas = "SELECT count(*) FROM cuenta WHERE usuario_id_usuario = " . $idUsuario;
+    imprimePorConsola($queryCuentas);
+    $result =  mysqli_query($dbConexion, $queryCuentas);
+    imprimePorConsola($result);
+    if ($result and mysqli_num_rows($result) == 1) {
+        $arrayResult = mysqli_fetch_assoc($result);
+        return $arrayResult['count(*)'];
+    }
+    else
+        return false;
+}
+
 function buscaCuentasPorIdUsuario($dbConexion, $idUsuario) {
     $queryCuentas = "SELECT * FROM cuenta WHERE usuario_id_usuario = " . $idUsuario;
     imprimePorConsola($queryCuentas);
@@ -160,8 +181,8 @@ function buscaCuentaPorEntidadSucursal($dbConexion, $idEntidad, $idSucursal) {
 }
 
 
-function creaCuentaParaIdUsuario($dbConexion, $entidad, $sucursal, $dc, $numcc, $idUsuario) {
-    $insertCuentas = "INSERT INTO cuenta (num_entidad, num_sucursal, num_digito_control, num_cuenta, saldo, fecha_creacion, usuario_id_usuario) VALUES ($entidad, $sucursal, $dc, $numcc, 0.0, now(), $idUsuario)";
+function creaCuentaParaIdUsuario($dbConexion, $alias, $entidad, $sucursal, $dc, $numcc, $idUsuario) {
+    $insertCuentas = "INSERT INTO cuenta (alias, num_entidad, num_sucursal, num_digito_control, num_cuenta, saldo, fecha_creacion, usuario_id_usuario) VALUES ('$alias', $entidad, $sucursal, $dc, $numcc, 0.0, now(), $idUsuario)";
     imprimePorConsola($insertCuentas);
     $result =  mysqli_query($dbConexion, $insertCuentas);
     imprimePorConsola($result);
@@ -193,6 +214,17 @@ function borraCuentaPorIdCuenta($dbConexion, $idCuenta) {
     
     imprimePorConsola($deleteCuentas);
     $result =  mysqli_query($dbConexion, $deleteCuentas);
+    imprimePorConsola($result);
+    return $result;
+}
+
+/***************************************/
+/******   TABLA MOVIMIENTO    **********/
+/***************************************/
+function buscaMovimientosPorIdCuenta($dbConexion, $idCuenta) {
+    $queryMovimientos = "SELECT * FROM movimiento WHERE cuenta_id_cuenta = " . $idCuenta . " order by fecha_creacion desc";
+    imprimePorConsola($queryMovimientos);
+    $result =  mysqli_query($dbConexion, $queryMovimientos);
     imprimePorConsola($result);
     return $result;
 }

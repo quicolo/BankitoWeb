@@ -86,7 +86,7 @@ else {
           </div>
         </div>
         <div class="w3-row-padding w3-margin">
-          <button type="submit" name="actualizar" class="w3-button w3-block w3-black w3-hover-teal">Actualizar</button>
+          <button type="submit" name="actualizar" class="w3-button w3-block w3-teal">Actualizar</button>
         </div>
       </form>
     </div>

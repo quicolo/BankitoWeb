@@ -15,6 +15,8 @@ define("TEMPLATES_PATH", RESOURCES_PATH . '/templates');
 define("VENDOR_PATH", APP_ROOT_PATH . '/vendor');
 
 // Constantes de comportamiento de la aplicación
+define("COD_ENTIDAD", 101);
+define("COD_SUCURSAL", 202);
 define("MINUTOS_CADUCA_TOKEN", 30);
 define("MINUTOS_CADUCA_SESION", 30);
 define("NUM_MAX_CUENTAS_POR_USUARIO", 3);

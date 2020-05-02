@@ -22,6 +22,9 @@ else {
   $indice = intval($_GET['indice']);
   $numCuentas = count($_SESSION['cuentas']);
 
+  //Salvamos el índice en la sesión
+  $_SESSION['indice'] = $indice;
+
   if ($indice < 0 or $indice >= $numCuentas) {
     $_SESSION['resultado'] = 'error';
     $_SESSION['errores'] = "La cuenta referida no existe";
@@ -71,13 +74,18 @@ else {
                     </div>
                 </div>
                 <div class="w3-row-padding w3-margin">
-                    <button type="submit" name="actualizar" class="w3-button w3-block w3-black w3-hover-teal">Actualizar</button>
-                </div>
-            </form>    
+                    <button type="submit" name="actualizar" class="w3-button w3-block w3-teal">Actualizar alias</button>
+                </div>                
+            </form>   
+            <div class="w3-container">
+                <div class="w3-row-padding w3-margin">
+                    <button onclick="document.getElementById('id01').style.display='block'" name="eliminar" class="w3-button w3-block w3-teal">Eliminar cuenta</button>
+                </div> 
+            </div>
         </div> 
         <div class="w3-third w3-container">
             <div class="w3-card-4">
-                <img src="images/detalle-cuenta.jpg" class="w3-image w3-round w3-animate-right" alt="Foto del cliente">
+                <img src="images/detalle-cuenta.jpg" class="w3-image w3-round w3-animate-right" alt="Detalle cuenta">
             </div>
         </div>
     </div>
@@ -86,3 +94,28 @@ else {
     }
 }
 ?>
+
+<!-- Ventana modal para confirmar la eliminación de la cuenta -->
+<div id="id01" class="w3-modal">
+  <div class="w3-modal-content">
+
+    <header class="w3-container w3-black">
+      <span onclick="document.getElementById('id01').style.display='none'"
+      class="w3-button w3-display-topright">&times;</span>
+      <h2>Los datos de la cuenta se borrarán ¿estás seguro?</h2>
+    </header>
+
+    <div class="w3-row w3-center w3-padding-16">
+        <div class="w3-half">
+            <button class="w3-button w3-teal" 
+                    onclick="window.location.assign('principal-cuenta-eliminar.php')" 
+                    style="text-decoration:none">
+                Aceptar
+            </button>
+        </div>
+        <div class="w3-half">
+            <button class="w3-button w3-teal" onclick="document.getElementById('id01').style.display='none'">Cancelar</button>
+        </div>
+    </div>
+  </div>
+</div>
