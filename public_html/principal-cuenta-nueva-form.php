@@ -31,7 +31,7 @@ if (!isset($_SESSION['usuario']) or $_SESSION['usuario'] == null) {
 
     <div class="w3-row">
         <div class="w3-twothird w3-container">
-            <form class="w3-container" method="post" action="principal-crea-cuenta-valida-form.php">
+            <form class="w3-container" method="post" action="principal-cuenta-nueva-valida-form.php">
                 <div class="w3-row-padding w3-padding">
                     <div class="w3-col">
                         <label>Indica un alias o nombre corto para la nueva cuenta</label>

@@ -73,3 +73,45 @@ function formateaCuenta($entidad, $sucursal, $dc, $cuenta, $separador = '-')
 
     return $cadEntidad . $separador . $cadSucursal . $separador . $cadDc . $separador . $cadCuenta;
 }
+
+function muestraCuentaOrigen($cuenta)
+{
+    muestraCuentaRadioButton($cuenta, "origen");
+}
+function muestraCuentaDestino($cuenta)
+{
+    muestraCuentaRadioButton($cuenta, "destino");
+}
+function muestraCuentaRadioButton($cuenta, $nombreRadioButton)
+{
+    $cuentaFormateada = formateaCuenta(
+        $cuenta['num_entidad'],
+        $cuenta['num_sucursal'],
+        $cuenta['num_digito_control'],
+        $cuenta['num_cuenta']
+    );
+    $saldoFormateado = number_format($cuenta['saldo'], 2);
+    ?>
+    <div class="w3-row">
+        <div class="w3-col w3-container" style="width:30px">
+            <input class="w3-radio" type="radio" name="<?= $nombreRadioButton ?>" value="<?= $cuenta['id_cuenta'] ?>" checked>
+        </div>
+        <div class="w3-rest w3-container">
+            <label>
+                <table class="w3-table-all">
+                    <tr>
+                        <th class="w3-center">Cuenta</th>
+                        <th class="w3-center">Saldo</th>
+                        <th class="w3-center">Numeración</th>
+                    </tr>
+                    <tr>
+                        <td class="w3-center"><?= $cuenta['alias'] ?></td>
+                        <td class="w3-center"><?= $saldoFormateado ?> €</td>
+                        <td class="w3-center"><?= $cuentaFormateada ?></td>
+                    </tr>
+                </table>
+            </label>
+        </div>
+    </div>
+<?php
+}

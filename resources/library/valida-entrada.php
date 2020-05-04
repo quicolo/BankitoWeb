@@ -30,7 +30,7 @@ function validaEmail($email) {
 // Obliga al formato dd/mm/aaaa
 function validaFecha($fecha) {
     $sep = "[\/\-\.]";
-    $req = "#^(((0?[1-9]|1\d|2[0-8]){$sep}(0?[1-9]|1[012])|(29|30){$sep}(0?[13456789]|1[012])|31{$sep}(0?[13578]|1[02])){$sep}(19|[2-9]\d)\d{2}|29{$sep}0?2{$sep}((19|[2-9]\d)(0[48]|[2468][048]|[13579][26])|(([2468][048]|[3579][26])00)))$#";
+    $reg = "#^(((0?[1-9]|1\d|2[0-8]){$sep}(0?[1-9]|1[012])|(29|30){$sep}(0?[13456789]|1[012])|31{$sep}(0?[13578]|1[02])){$sep}(19|[2-9]\d)\d{2}|29{$sep}0?2{$sep}((19|[2-9]\d)(0[48]|[2468][048]|[13579][26])|(([2468][048]|[3579][26])00)))$#";
     return preg_match($reg, $fecha) == 1;
 }
 
@@ -55,6 +55,16 @@ function validaNif($nif) {
     } else {
         return false;
     }
+}
+
+function validaImporte($importe) {
+    $reg = "#([0-9]{1,8})|([0-9]{1,8}\.[0-9]{2})#";
+    return preg_match($reg, $importe) == 1;
+}
+
+function validaFormatoCuenta($cadena) {
+    $reg = "#[0-9]{4}\-[0-9]{4}\-[0-9]{2}\-[0-9]{10}#";
+    return preg_match($reg, $cadena) == 1;
 }
 
 // Se exige que la clave tiene al menos 6 caracteres

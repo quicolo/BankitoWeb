@@ -2,12 +2,20 @@
 include_once LIBRARY_PATH . '/maneja-consola.php';
 
 function muestraMensajes($ocultarMsg = true) {
+  muestraMensajesDefineMensajeOK("Los datos se actualizaron correctamente", $ocultarMsg);
+}
+
+function muestraMensajesOperacion($ocultarMsg = true) {
+  muestraMensajesDefineMensajeOK("La operación se realizó correctamente", $ocultarMsg);
+}
+
+function muestraMensajesDefineMensajeOK($mensajeOK, $ocultarMsg = true) {
   if (isset($_SESSION['resultado']) && $_SESSION['resultado'] == 'ok') {
     unset($_SESSION['resultado']);
     ?>
     <div id="ok" class="w3-container">
         <div class="w3-card w3-green w3-padding">
-            <h1>Datos actualizados correctamente</H1>
+            <h1><?=$mensajeOK?></H1>
         </div>
         <br>
     </div>
@@ -29,7 +37,7 @@ function muestraMensajes($ocultarMsg = true) {
     ?>
     <div id="errores" class="w3-container">
         <div class="w3-card w3-black w3-padding">
-            <h1>¡UOPS!</H1>
+            <h1>¡OUPS!</H1>
             <?php
             echo implode("<br>", $_SESSION['errores']);
             ?>

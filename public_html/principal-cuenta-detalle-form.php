@@ -93,10 +93,11 @@ else {
     <?php
     }
 }
+include TEMPLATES_PATH . '/principal-footer.php';
 ?>
 
 <!-- Ventana modal para confirmar la eliminación de la cuenta -->
-<div id="id01" class="w3-modal">
+<div id="id01" class="w3-modal w3-animate-opacity">
   <div class="w3-modal-content">
 
     <header class="w3-container w3-black">

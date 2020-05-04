@@ -180,6 +180,18 @@ function buscaCuentaPorEntidadSucursal($dbConexion, $idEntidad, $idSucursal) {
     return $result;
 }
 
+function buscaCuentaPorNumeracion($dbConexion, $numeracion) {
+    $entidad = intval(substr($numeracion, 0, 4));
+    $sucursal = intval(substr($numeracion, 5, 4));
+    $dc = intval(substr($numeracion, 10, 2));
+    $numcc = intval(substr($numeracion, 13, 10));
+    $queryCuentas = "SELECT * FROM cuenta WHERE num_entidad = $entidad and num_sucursal = $sucursal and
+                     num_digito_control = $dc and num_cuenta = $numcc";
+    imprimePorConsola($queryCuentas);
+    $result =  mysqli_query($dbConexion, $queryCuentas);
+    imprimePorConsola($result);
+    return $result;
+}
 
 function creaCuentaParaIdUsuario($dbConexion, $alias, $entidad, $sucursal, $dc, $numcc, $idUsuario) {
     $insertCuentas = "INSERT INTO cuenta (alias, num_entidad, num_sucursal, num_digito_control, num_cuenta, saldo, fecha_creacion, usuario_id_usuario) VALUES ('$alias', $entidad, $sucursal, $dc, $numcc, 0.0, now(), $idUsuario)";
@@ -189,13 +201,48 @@ function creaCuentaParaIdUsuario($dbConexion, $alias, $entidad, $sucursal, $dc, 
     return $result;
 }
 
-function actualizaSaldoCuentaIdCuenta($dbConexion, $idCuenta, $saldo) {
-    $actualizaCuenta = "UPDATE cuenta SET saldo=$saldo WHERE id_cuenta=$idCuenta";
-    
-    imprimePorConsola($actualizaCuenta);
-    $result =  mysqli_query($dbConexion, $actualizaCuenta);
+function incrementaSaldoCuentaPorIdCuenta($dbConexion, $idCuenta, $incremento) {
+    $queryCuenta = "SELECT saldo FROM cuenta WHERE id_cuenta=$idCuenta";
+    imprimePorConsola($queryCuenta);
+    $result =  mysqli_query($dbConexion, $queryCuenta);
     imprimePorConsola($result);
-    return $result;
+
+    if ($result and mysqli_num_rows($result) == 1) {
+        $array = mysqli_fetch_assoc($result);
+        $saldo = $array['saldo'];
+        $nuevoSaldo = $saldo + $incremento;
+        $actualizaCuenta = "UPDATE cuenta SET saldo=$nuevoSaldo WHERE id_cuenta=$idCuenta";
+        
+        imprimePorConsola($actualizaCuenta);
+        $result =  mysqli_query($dbConexion, $actualizaCuenta);
+        imprimePorConsola($result);
+        return $result;
+    }
+    else {
+        return false;
+    }
+}
+
+function decrementaSaldoCuentaPorIdCuenta($dbConexion, $idCuenta, $decremento) {
+    $queryCuenta = "SELECT saldo FROM cuenta WHERE id_cuenta=$idCuenta";
+    imprimePorConsola($queryCuenta);
+    $result =  mysqli_query($dbConexion, $queryCuenta);
+    imprimePorConsola($result);
+
+    if ($result and mysqli_num_rows($result) == 1) {
+        $array = mysqli_fetch_assoc($result);
+        $saldo = $array['saldo'];
+        $nuevoSaldo = $saldo - $decremento;
+        $actualizaCuenta = "UPDATE cuenta SET saldo=$nuevoSaldo WHERE id_cuenta=$idCuenta";
+        
+        imprimePorConsola($actualizaCuenta);
+        $result =  mysqli_query($dbConexion, $actualizaCuenta);
+        imprimePorConsola($result);
+        return $result;
+    }
+    else {
+        return false;
+    }
 }
 
 function actualizaAliasCuentaIdCuenta($dbConexion, $idCuenta, $alias) {
@@ -225,6 +272,37 @@ function buscaMovimientosPorIdCuenta($dbConexion, $idCuenta) {
     $queryMovimientos = "SELECT * FROM movimiento WHERE cuenta_id_cuenta = " . $idCuenta . " order by fecha_creacion desc";
     imprimePorConsola($queryMovimientos);
     $result =  mysqli_query($dbConexion, $queryMovimientos);
+    imprimePorConsola($result);
+    return $result;
+}
+
+function buscaTipoMovimientoPorIdTipoMovim($dbConexion, $idTipoMovim) {
+    $queryMovimientos = "SELECT * FROM tipo_movimiento WHERE id_tipo_movimiento = " . $idTipoMovim;
+    imprimePorConsola($queryMovimientos);
+    $result =  mysqli_query($dbConexion, $queryMovimientos);
+    imprimePorConsola($result);
+    return $result;
+}
+
+function creaMovimiento($dbConexion, $concepto, $importe, $idCuenta, $idTipoMovim) {
+    $queryMovimientos = "INSERT INTO movimiento (concepto, importe, fecha_creacion, cuenta_id_cuenta, 
+                         id_tipo_movimiento) VALUES ('$concepto', $importe, now(), $idCuenta, $idTipoMovim)";
+    imprimePorConsola($queryMovimientos);
+    $result =  mysqli_query($dbConexion, $queryMovimientos);
+    imprimePorConsola($result);
+    return $result;
+
+}
+
+
+
+/***************************************/
+/****   TABLA TIPO_MOVIMIENTO    *******/
+/***************************************/
+function buscaTipoMovimientoPorCodigo($dbConexion, $CodTipoMovim) {
+    $queryTipoMovim = "SELECT * FROM tipo_movimiento WHERE cod_tipo_movimiento = '" . $CodTipoMovim . "'";
+    imprimePorConsola($queryTipoMovim);
+    $result =  mysqli_query($dbConexion, $queryTipoMovim);
     imprimePorConsola($result);
     return $result;
 }

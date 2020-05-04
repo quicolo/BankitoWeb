@@ -89,7 +89,7 @@ if (!isset($_SESSION['usuario']) or $_SESSION['usuario'] == null) {
         <div class="w3-container">
 
           <button class="w3-button w3-teal w3-block" 
-                onclick="window.location.assign('principal-crea-cuenta-form.php')" 
+                onclick="window.location.assign('principal-cuenta-nueva-form.php')" 
                 style="text-decoration:none">
                 Nueva cuenta
         </button>

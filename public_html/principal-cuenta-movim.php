@@ -60,7 +60,7 @@ if (
                     <?php
                     $saldo = $cuenta['saldo'];
                     while ($movim = mysqli_fetch_assoc($result)) {
-                        muestraMovimiento($movim, $saldo);                        
+                        muestraMovimiento($dbConexion, $movim, $saldo);                        
                     }
                     muestraMovimientoInicial($cuenta['fecha_creacion']);
                     ?>
@@ -80,25 +80,34 @@ if (
 <?php
     }
 }
+include TEMPLATES_PATH . '/principal-footer.php';
 
-function muestraMovimiento($movim, &$saldo) {
+function muestraMovimiento($dbConexion, $movim, &$saldo) {
 ?>
     <tr>
         <td class="w3-center"><?=date("d-m-Y", strtotime($movim['fecha_creacion']))?></td>
         <td><?=$movim['concepto']?></td>
         <?php
             $celdaSaldo = "<td class='w3-right-align'>".number_format($saldo, 2)." €</td>";
-            
-            if ($movim['tipo'] == 'Salida') {
-                $celdaImporte = "<td class='w3-text-red w3-right-align'>-".number_format($movim['importe'], 2) ." €</td>";
-                $saldo = $saldo + $movim['importe'];
+            $registroTipo = buscaTipoMovimientoPorIdTipoMovim($dbConexion, $movim['id_tipo_movimiento']);
+            if ($registroTipo and mysqli_num_rows($registroTipo)==1) {
+                $resultTipo = mysqli_fetch_assoc($registroTipo);
+                
+                if ($resultTipo['direccion'] == 'Salida') {
+                    $celdaImporte = "<td class='w3-text-red w3-right-align'>-".number_format($movim['importe'], 2) ." €</td>";
+                    $saldo = $saldo + $movim['importe'];
+                }
+                else {
+                    $celdaImporte = "<td class='w3-right-align'>".number_format($movim['importe'], 2)." €</td>";
+                    $saldo = $saldo - $movim['importe'];
+                }
+                echo $celdaImporte;
+                echo $celdaSaldo;
             }
             else {
-                $celdaImporte = "<td class='w3-right-align'>".number_format($movim['importe'], 2)." €</td>";
-                $saldo = $saldo - $movim['importe'];
+                echo "<td>Error</td>";
+                echo "<td>Error</td>";
             }
-            echo $celdaImporte;
-            echo $celdaSaldo;
         ?>
     </tr>
 <?php
