@@ -5,12 +5,19 @@ define("PROTOCOLO", "http");
 
 // Constantes rutas en disco duro
 define("APACHE_ROOT_PATH", $_SERVER['DOCUMENT_ROOT']);
-define("APP_FOLDER", "bankitoweb");
-define("APP_ROOT_PATH", APACHE_ROOT_PATH . '/' . APP_FOLDER);
+define("ALIAS_FOLDER", "/bankitoweb");
+define("APP_ROOT_PATH", APACHE_ROOT_PATH .ALIAS_FOLDER);
 
 define("RESOURCES_PATH", APP_ROOT_PATH . '/resources');
 define("LIBRARY_PATH", RESOURCES_PATH . '/library');
 define("TEMPLATES_PATH", RESOURCES_PATH . '/templates');
+define("IMAGES_PATH", ALIAS_FOLDER . '/images');
+
+define("PUBLIC_HTML_PATH", ALIAS_FOLDER);
+define("POS_GLOBAL_PATH", ALIAS_FOLDER);
+define("CUENTAS_PATH", ALIAS_FOLDER);
+define("OPERACIONES_PATH", ALIAS_FOLDER);
+define("MI_PERFIL_PATH", ALIAS_FOLDER.'/mi-perfil');
 
 define("VENDOR_PATH", APP_ROOT_PATH . '/vendor');
 
@@ -46,7 +53,7 @@ if (ENTORNO == "DESARROLLO") {
     $host = "localhost";
 }
 
-define("BASE_URL", PROTOCOLO . '://' . $host . '/' . APP_FOLDER . '/');
+define("BASE_URL", PROTOCOLO . '://' . $host . '/' . ALIAS_FOLDER . '/');
 
 $dbConexion = mysqli_connect($host, $userName, $password, $dbName);
 mysqli_query($dbConexion, "SET NAMES 'utf8'");

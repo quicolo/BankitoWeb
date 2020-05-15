@@ -4,10 +4,10 @@
     <i class="fa fa-remove"></i>
   </a>
   <h4 class="w3-bar-item"><b>Menu</b></h4>
-  <a class="w3-bar-item w3-button w3-hover-teal" href="principal-posicion-global.php"><i class="fas fa-university fa-fw"></i> Posición global</a>
-  <a class="w3-bar-item w3-button w3-hover-teal" href="principal-cuenta.php"><i class="fas fa-money-check fa-fw"></i> Cuentas</a>
-  <a class="w3-bar-item w3-button w3-hover-teal" href="principal-operacion.php"><i class="fas fa-tasks fa-fw"></i> Operaciones</a>
-  <a class="w3-bar-item w3-button w3-hover-teal" href="principal-mi-perfil-form.php"><i class="fas fa-id-badge fa-fw"></i> Mi perfil</a>
+  <a class="w3-bar-item w3-button w3-hover-teal" href="<?=POS_GLOBAL_PATH?>/principal-posicion-global.php"><i class="fas fa-university fa-fw"></i> Posición global</a>
+  <a class="w3-bar-item w3-button w3-hover-teal" href="<?=CUENTAS_PATH?>/principal-cuenta.php"><i class="fas fa-money-check fa-fw"></i> Cuentas</a>
+  <a class="w3-bar-item w3-button w3-hover-teal" href="<?=OPERACIONES_PATH?>/principal-operacion.php"><i class="fas fa-tasks fa-fw"></i> Operaciones</a>
+  <a class="w3-bar-item w3-button w3-hover-teal" href="<?=MI_PERFIL_PATH?>/principal-mi-perfil-form.php"><i class="fas fa-id-badge fa-fw"></i> Mi perfil</a>
 </nav>
 
 <!-- Overlay effect when opening sidebar on small screens -->

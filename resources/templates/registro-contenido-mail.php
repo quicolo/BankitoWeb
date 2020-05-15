@@ -32,8 +32,8 @@
 
             table {
                 border-collapse: separate;
-                mso-table-lspace: 0pt;
-                mso-table-rspace: 0pt;
+                /* mso-table-lspace: 0pt; DESCOMENTAR SI NO SE VE BIEN LA PRÓXIMA VEZ*/
+                /* mso-table-rspace: 0pt; DESCOMENTAR SI NO SE VE BIEN LA PRÓXIMA VEZ*/
                 width: 100%; }
             table td {
                 font-family: sans-serif;
@@ -231,7 +231,7 @@
                 max-width: 0;
                 opacity: 0;
                 overflow: hidden;
-                mso-hide: all;
+                /* mso-hide: all; DESCOMENTAR SI NO SE VE BIEN LA PRÓXIMA VEZ*/
                 visibility: hidden;
                 width: 0; 
             }
