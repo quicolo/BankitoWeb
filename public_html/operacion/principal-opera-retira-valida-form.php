@@ -1,5 +1,5 @@
 <?php
-require_once '../resources/config.php';
+require_once '../../resources/config.php';
 include LIBRARY_PATH . '/maneja-base-datos.php';
 include LIBRARY_PATH . '/maneja-sesion.php';
 include LIBRARY_PATH . '/valida-entrada.php';
@@ -31,13 +31,19 @@ if (!isset($_SESSION['usuario']) or $_SESSION['usuario'] == null) {
                 $errores[] = "La cuenta a la que haces referencia no existe";
             } else {
                 $cuenta = $_SESSION['cuentas'][$indice];
-                $idCuenta = $cuenta['id_cuenta'];
+                if($importe <= $cuenta['saldo']){
+                    
+                    $idCuenta = $cuenta['id_cuenta'];
 
-                $result = realizaIngreso($dbConexion, $idCuenta, $concepto, $importe);
-                if (!$result) {
-                    $errores[] = "Algo falló al intentar realizar el ingreso";
-                } else {
-                    $_SESSION['cuentas'][$indice]['saldo'] += $importe;
+                    $result = realizaRetirada($dbConexion, $idCuenta, $concepto, $importe);
+                    if (!$result) {
+                        $errores[] = "Algo falló al intentar realizar la retirada/gasto";
+                    } else {
+                        $_SESSION['cuentas'][$indice]['saldo'] -= $importe;
+                    }
+                }
+                else {
+                    $errores[] = "El importe a retirar no puede superar el saldo de tu cuenta.";
                 }
             }
         }
@@ -48,4 +54,4 @@ if (!isset($_SESSION['usuario']) or $_SESSION['usuario'] == null) {
     } else
         $_SESSION['resultado'] = 'ok';
 }
-header('Location: principal-opera-ingresa-form.php?indice=' . $indice);
+header('Location: principal-opera-retira-form.php?indice=' . $indice);

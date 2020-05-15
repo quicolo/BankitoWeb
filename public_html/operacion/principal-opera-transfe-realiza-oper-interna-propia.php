@@ -1,5 +1,5 @@
 <?php
-require_once '../resources/config.php';
+require_once '../../resources/config.php';
 include LIBRARY_PATH . '/maneja-base-datos.php';
 include LIBRARY_PATH . '/maneja-sesion.php';
 include LIBRARY_PATH . '/maneja-cuenta.php';
@@ -13,13 +13,13 @@ if (!isset($_SESSION['usuario']) or $_SESSION['usuario'] == null) {
     header('Location: login-form.php');
 } else {
     if (
-        $_POST['origen'] and $_POST['numeracionDestino'] and $_POST['concepto'] and
+        $_POST['origen'] and $_POST['destino'] and $_POST['concepto'] and
         $_POST['importe'] and $_POST['saldoOrigen'] and isset($_SESSION['cuentas'])
     ) {
 
         $idCuentaOrigen = $_POST['origen'];
+        $idCuentaDestino = $_POST['destino'];
         $saldoOrigen = $_POST['saldoOrigen'];
-        $numeracionDestino = trim(filter_input(INPUT_POST, 'numeracionDestino', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
         $concepto = trim(filter_input(INPUT_POST, 'concepto', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
         $importe = trim(filter_input(INPUT_POST, 'importe', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
 
@@ -29,19 +29,10 @@ if (!isset($_SESSION['usuario']) or $_SESSION['usuario'] == null) {
             $errores[] = "El importe es un campo requerido y debe ser numérico";
         } else if ($importe > $saldoOrigen) {
             $errores[] = "No hay saldo suficiente en la cuenta origen para realizar la transferencia";
-        } else if (!validaFormatoCuenta($numeracionDestino)) {
-            $errores[] = "El formato de la cuenta de destino no es correcto";
         } else {
-            $cuentaDestino = buscaCuentaPorNumeracion($dbConexion, $numeracionDestino);
-            if (!$cuentaDestino or mysqli_num_rows($cuentaDestino) == 0) {
-                $errores[] = "El número de cuenta indicado no se encuentra en Bankito";
-            } else {
-                $arrayCuentaDestino = mysqli_fetch_assoc($cuentaDestino);
-                $idCuentaDestino = $arrayCuentaDestino['id_cuenta'];
-                $result = realizaTransferenciaInterna($dbConexion, $idCuentaOrigen, $idCuentaDestino, $concepto, $importe);
-                if (!$result) {
-                    $errores[] = "Se produjo un error al realizar la transferencia.";
-                }
+            $result = realizaTransferenciaInterna($dbConexion, $idCuentaOrigen, $idCuentaDestino, $concepto, $importe);
+            if (!$result) {
+                $errores[] = "Se produjo un error al realizar la transferencia.";
             }
         }
     } else {
@@ -67,7 +58,7 @@ if (!isset($_SESSION['usuario']) or $_SESSION['usuario'] == null) {
             <div class="w3-card w3-black w3-padding">
                 <h1>¡OUPS!</H1>
                 <?php
-                echo implode("<br>", $errores);
+                echo implode("<br>", $_SESSION['errores']);
                 ?>
             </div>
         </div>

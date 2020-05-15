@@ -1,5 +1,5 @@
 <?php
-require_once '../resources/config.php';
+require_once '../../resources/config.php';
 include LIBRARY_PATH . '/maneja-base-datos.php';
 include LIBRARY_PATH . '/maneja-sesion.php';
 include LIBRARY_PATH . '/maneja-cuenta.php';
@@ -85,7 +85,7 @@ else {
         </div> 
         <div class="w3-third w3-container">
             <div class="w3-card-4">
-                <img src="images/detalle-cuenta.jpg" class="w3-image w3-round w3-animate-right" alt="Detalle cuenta">
+                <img src="<?=IMAGES_PATH?>/detalle-cuenta.jpg" class="w3-image w3-round w3-animate-right" alt="Detalle cuenta">
             </div>
         </div>
     </div>

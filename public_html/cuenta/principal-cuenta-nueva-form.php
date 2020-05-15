@@ -1,5 +1,5 @@
 <?php
-require_once '../resources/config.php';
+require_once '../../resources/config.php';
 include LIBRARY_PATH . '/maneja-base-datos.php';
 include LIBRARY_PATH . '/maneja-sesion.php';
 include LIBRARY_PATH . '/maneja-cuenta.php';
@@ -45,7 +45,7 @@ if (!isset($_SESSION['usuario']) or $_SESSION['usuario'] == null) {
         </div>
         <div class="w3-third w3-container">
             <div class="w3-card-4">
-                <img src="images/Nueva-cuenta.png" class="w3-image w3-round w3-animate-right" alt="Nueva cuenta">
+                <img src="<?=IMAGES_PATH?>/Nueva-cuenta.png" class="w3-image w3-round w3-animate-right" alt="Nueva cuenta">
             </div>
         </div>
     </div>

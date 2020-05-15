@@ -1,5 +1,5 @@
 <?php
-require_once '../resources/config.php';
+require_once '../../resources/config.php';
 include LIBRARY_PATH . '/maneja-base-datos.php';
 include LIBRARY_PATH . '/maneja-sesion.php';
 include LIBRARY_PATH . '/maneja-cuenta.php';
@@ -52,7 +52,7 @@ if (!isset($_SESSION['usuario']) or $_SESSION['usuario'] == null) {
     </div>
     <div class="w3-third w3-container">
       <div class="w3-card-4">
-        <img src="images/operaciones.jpg" class="w3-image w3-round w3-animate-right" alt="Operaciones">
+        <img src="<?=IMAGES_PATH?>/operaciones.jpg" class="w3-image w3-round w3-animate-right" alt="Operaciones">
       </div>
     </div>
   </div>
@@ -68,7 +68,7 @@ function muestraCuentaOperac($cuenta, $indice)
   <div class="w3-card w3-hover-shadow w3-margin w3-animate-zoom">
     <div class="w3-display-container w3-text-white">
       <!-- Tamaño de la imagen 730x120 -->
-      <img src="images/Banner-cuenta-<?= $indice ?>.png" style="width:100%">
+      <img src="<?=IMAGES_PATH?>/Banner-cuenta-<?= $indice ?>.png" style="width:100%">
       <div class="w3-display-topleft w3-padding">
         <h4>Cuenta <?= $cuenta['alias'] ?></h4>
         <p>Saldo: <?= number_format($cuenta['saldo'], 2) ?> euros</p>

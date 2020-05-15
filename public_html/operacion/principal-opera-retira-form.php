@@ -1,5 +1,5 @@
 <?php
-require_once '../resources/config.php';
+require_once '../../resources/config.php';
 include LIBRARY_PATH . '/maneja-base-datos.php';
 include LIBRARY_PATH . '/maneja-sesion.php';
 include LIBRARY_PATH . '/maneja-cuenta.php';
@@ -37,7 +37,7 @@ if (
             muestraMensajesOperacion();
             ?>
             <div class="w3-twothird w3-container">
-                <h1 class="w3-text-teal">Ingreso en la cuenta <?= $cuenta['alias'] ?>
+                <h1 class="w3-text-teal">Retirada o gasto en la cuenta <?= $cuenta['alias'] ?>
                 </h1>
                 <hr>
             </div>
@@ -47,12 +47,12 @@ if (
 
         <div class="w3-row">
             <div class="w3-twothird w3-container">
-                <form class="w3-container" method="post" action="principal-opera-ingresa-valida-form.php">
+                <form class="w3-container" method="post" action="principal-opera-retira-valida-form.php">
                     <input type="text" name="indice" hidden value="<?= $indice ?>">
                     <div class="w3-row-padding w3-padding">
                         <div class="w3-col m6 l6">
-                            <label>Concepto del ingreso</label>
-                            <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="concepto" required placeholder="Ejemplos: nómina, cobro de factura...">
+                            <label>Concepto de la retirada o el gasto</label>
+                            <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="concepto" required placeholder="Ejemplos: viaje, regalo, pago de impuestos...">
                         </div>
                         <div class="w3-col m6 l6">
                             <label>Importe</label>
@@ -61,13 +61,13 @@ if (
                         </div>
                     </div>
                     <div class="w3-row-padding w3-margin">
-                        <button type="submit" name="ingresar" class="w3-button w3-block w3-teal">Ingresar</button>
+                        <button type="submit" name="retirar" class="w3-button w3-block w3-teal">Retirar / Gastar</button>
                     </div>
                 </form>
             </div>
             <div class="w3-third w3-container">
                 <div class="w3-card-4">
-                    <img src="images/cajero.jpg" class="w3-image w3-round w3-animate-right" alt="Cajero automático">
+                    <img src="<?=IMAGES_PATH?>/gastos.png" class="w3-image w3-round w3-animate-right" alt="Gastos">
                 </div>
             </div>
         </div>

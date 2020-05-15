@@ -1,5 +1,5 @@
 <?php
-require_once '../resources/config.php';
+require_once '../../resources/config.php';
 include LIBRARY_PATH . '/maneja-base-datos.php';
 include LIBRARY_PATH . '/maneja-sesion.php';
 include LIBRARY_PATH . '/maneja-cuenta.php';
@@ -22,7 +22,7 @@ if (!isset($_SESSION['usuario']) or $_SESSION['usuario'] == null) {
 ?>
             <div class="w3-row">
                 <div class="w3-twothird w3-container">
-                    <h1 class="w3-text-teal">Transferir entre tus cuentas
+                    <h1 class="w3-text-teal">Transferir a otra persona de Bankito
                     </h1>
                     <hr>
                 </div>
@@ -32,7 +32,7 @@ if (!isset($_SESSION['usuario']) or $_SESSION['usuario'] == null) {
 
             <div class="w3-row">
                 <div class="w3-twothird w3-container">
-                    <form class="w3-container" method="post" action="principal-opera-transfe-realiza-oper-interna-propia.php">
+                    <form class="w3-container" method="post" action="principal-opera-transfe-realiza-oper-interna-ajena.php">
                         <input type="hidden" name="saldoOrigen" value="<?= $cuentaOrigen['saldo'] ?>">
                         <div class="w3-row-padding w3-padding">
                             <p>Cuenta origen</p>
@@ -40,16 +40,9 @@ if (!isset($_SESSION['usuario']) or $_SESSION['usuario'] == null) {
                             muestraCuentaOrigen($cuentaOrigen);
                             ?>
                         </div>
-                        <div class="w3-row-padding w3-padding">
-                            <p>Escoge la cuenta destino de la transferencia:</p>
-                            <?php
-                            for ($i = 0; $i < $numCuentas; $i++) {
-                                if ($indice != $i) {
-                                    muestraCuentaDestino($_SESSION['cuentas'][$i]);
-                                    echo "<br>";
-                                }
-                            }
-                            ?>
+                        <div class="w3-row-padding w3-margin">
+                            <label>Indica la numeración de la cuenta de destino</label>
+                            <input class="w3-input w3-border" style="width:100%" type="text" name="numeracionDestino" pattern="[0-9]{4}\-[0-9]{4}\-[0-9]{2}\-[0-9]{10}" title="Debes introducir la cuenta en el formato 0000-0000-00-0000000000" placeholder="0000-0000-00-0000000000" required>
                         </div>
                         <div class="w3-row-padding w3-margin">
                             <label>Concepto</label>
@@ -66,13 +59,13 @@ if (!isset($_SESSION['usuario']) or $_SESSION['usuario'] == null) {
                 </div>
                 <div class="w3-third w3-container">
                     <div class="w3-card-4">
-                        <img src="images/Transferencia.png" class="w3-image w3-round w3-animate-right" alt="Transferencia">
+                        <img src="<?=IMAGES_PATH?>/Transferencia.png" class="w3-image w3-round w3-animate-right" alt="Transferencia">
                     </div>
                 </div>
             </div>
 
 
-    <?php
+<?php
         } else {
             $errores = "Necesitas al menos dos cuentas para poder realizar la transferencia.";
         }
