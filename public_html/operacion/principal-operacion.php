@@ -69,24 +69,23 @@ function muestraCuentaOperac($cuenta, $indice)
     <div class="w3-display-container w3-text-white">
       <!-- Tamaño de la imagen 730x120 -->
       <img src="<?= IMAGES_PATH ?>/Banner-cuenta-<?= $indice ?>.png" style="width:100%">
-      <div class="w3-display-topleft w3-padding">
-        <h4>Cuenta <?= $cuenta['alias'] ?></h4>
-        <p>Saldo: <?= number_format($cuenta['saldo'], 2) ?> euros</p>
+      <div class="w3-display-left w3-padding">
+        <h4 style="text-shadow:1px 1px 0 #444">Cuenta <?= $cuenta['alias'] ?> - <?= number_format($cuenta['saldo'], 2) ?> €</h4>
       </div>
     </div>
 
     <div class="w3-row w3-teal">
-      <div class="w3-third w3-center">
+      <div class="w3-col m4 l4 w3-center">
         <button class="w3-button w3-teal w3-block" onclick="window.location.assign('principal-opera-ingresa-form.php?indice=<?= $indice ?>')" style="text-decoration:none">
           Ingresar
         </button>
       </div>
-      <div class="w3-third w3-center">
+      <div class="w3-col m4 l4 w3-center">
         <button class="w3-button w3-teal w3-block" onclick="window.location.assign('principal-opera-retira-form.php?indice=<?= $indice ?>')" style="text-decoration:none">
           Retirar/Pagar
         </button>
       </div>
-      <div class="w3-third w3-center">
+      <div class="w3-col m4 l4 w3-center">
         <button class="w3-button w3-teal w3-block" onclick="window.location.assign('principal-opera-transfe-form.php?indice=<?= $indice ?>')" style="text-decoration:none">
           Transferir
         </button>
