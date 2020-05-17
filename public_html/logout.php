@@ -4,4 +4,4 @@ require LIBRARY_PATH . '/maneja-sesion.php';
 
 cierraSesionSegura();
 
-header('Location: index.php');
+header('Location: '.PUBLIC_HTML_PATH.'/index.php');

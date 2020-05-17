@@ -41,18 +41,18 @@ if (!isset($_SESSION['usuario']) or $_SESSION['usuario'] == null) {
           $indice++;
         }
       } else {
-        ?>
+      ?>
         <div class="w3-container">
           <h3>Todavía no has creado ninguna cuenta. Necesitas una cuenta para poder realizar operaciones. </h3>
         </div>
-        <?php
+      <?php
       }
 
       ?>
     </div>
     <div class="w3-third w3-container">
       <div class="w3-card-4">
-        <img src="<?=IMAGES_PATH?>/operaciones.jpg" class="w3-image w3-round w3-animate-right" alt="Operaciones">
+        <img src="<?= IMAGES_PATH ?>/operaciones.jpg" class="w3-image w3-round w3-animate-right" alt="Operaciones">
       </div>
     </div>
   </div>
@@ -68,7 +68,7 @@ function muestraCuentaOperac($cuenta, $indice)
   <div class="w3-card w3-hover-shadow w3-margin w3-animate-zoom">
     <div class="w3-display-container w3-text-white">
       <!-- Tamaño de la imagen 730x120 -->
-      <img src="<?=IMAGES_PATH?>/Banner-cuenta-<?= $indice ?>.png" style="width:100%">
+      <img src="<?= IMAGES_PATH ?>/Banner-cuenta-<?= $indice ?>.png" style="width:100%">
       <div class="w3-display-topleft w3-padding">
         <h4>Cuenta <?= $cuenta['alias'] ?></h4>
         <p>Saldo: <?= number_format($cuenta['saldo'], 2) ?> euros</p>
@@ -77,24 +77,18 @@ function muestraCuentaOperac($cuenta, $indice)
 
     <div class="w3-row w3-teal">
       <div class="w3-third w3-center">
-        <button class="w3-button w3-teal w3-block" 
-                onclick="window.location.assign('principal-opera-ingresa-form.php?indice=<?= $indice ?>')" 
-                style="text-decoration:none">
+        <button class="w3-button w3-teal w3-block" onclick="window.location.assign('principal-opera-ingresa-form.php?indice=<?= $indice ?>')" style="text-decoration:none">
           Ingresar
         </button>
       </div>
       <div class="w3-third w3-center">
-        <button class="w3-button w3-teal w3-block" 
-                onclick="window.location.assign('principal-opera-retira-form.php?indice=<?= $indice ?>')" 
-                style="text-decoration:none">
-                Retirar/Pagar
+        <button class="w3-button w3-teal w3-block" onclick="window.location.assign('principal-opera-retira-form.php?indice=<?= $indice ?>')" style="text-decoration:none">
+          Retirar/Pagar
         </button>
       </div>
       <div class="w3-third w3-center">
-        <button class="w3-button w3-teal w3-block" 
-                onclick="window.location.assign('principal-opera-transfe-form.php?indice=<?= $indice ?>')" 
-                style="text-decoration:none">
-                Transferir
+        <button class="w3-button w3-teal w3-block" onclick="window.location.assign('principal-opera-transfe-form.php?indice=<?= $indice ?>')" style="text-decoration:none">
+          Transferir
         </button>
       </div>
     </div>

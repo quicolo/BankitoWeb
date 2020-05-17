@@ -51,6 +51,6 @@ if (isset($_POST)) {
     if (isset($_SESSION['usuario']))
         header('Location: '.POS_GLOBAL_PATH.'/principal-posicion-global.php');
     else
-        header('Location: login-form.php');
+        header('Location: '.PUBLIC_HTML_PATH.'/login-form.php');
 }
 

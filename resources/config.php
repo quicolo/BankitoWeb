@@ -14,7 +14,7 @@ define("TEMPLATES_PATH", RESOURCES_PATH . '/templates');
 define("IMAGES_PATH", ALIAS_FOLDER . '/images');
 
 define("PUBLIC_HTML_PATH", ALIAS_FOLDER);
-define("POS_GLOBAL_PATH", ALIAS_FOLDER);
+define("POS_GLOBAL_PATH", ALIAS_FOLDER.'/posicion-global');
 define("CUENTAS_PATH", ALIAS_FOLDER.'/cuenta');
 define("OPERACIONES_PATH", ALIAS_FOLDER.'/operacion');
 define("MI_PERFIL_PATH", ALIAS_FOLDER.'/perfil');
