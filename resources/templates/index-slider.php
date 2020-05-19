@@ -7,20 +7,20 @@
 <div class="w3-container">
     <div class="w3-display-container mySlides">
         <img src="images/coffee.jpg" style="width:100%">
-        <div class="w3-display-middle w3-container w3-padding-32">
-            <span class="w3-white w3-padding-large w3-animate-bottom"><b>Avanzamos contigo</b></span>
+        <div class="w3-display-middle w3-container">
+            <button class="w3-button w3-white w3-padding-16 w3-hover-white w3-animate-bottom w3-round-xlarge"><b> Avanzamos contigo </b></button>
         </div>
     </div>
     <div class="w3-display-container mySlides">
         <img src="images/workbench.jpg" style="width:100%">
-        <div class="w3-display-middle w3-container w3-padding-32">
-            <span class="w3-white w3-padding-large w3-animate-bottom"><b>Aprendemos juntos</b></span>
+        <div class="w3-display-middle w3-container">
+            <button class="w3-button w3-white w3-padding-16 w3-hover-white w3-animate-bottom w3-round-xlarge"><b> Aprendemos juntos </b></button>
         </div>
     </div>
     <div class="w3-display-container mySlides">
         <img src="images/sound.jpg" style="width:100%">
-        <div class="w3-display-middle w3-container w3-padding-32">
-            <span class="w3-white w3-padding-large w3-animate-bottom"><b>Con proyección de futuro</b></span>
+        <div class="w3-display-middle w3-container">
+            <button class="w3-button w3-white w3-padding-16 w3-hover-white w3-animate-bottom w3-round-xlarge"><b> Proyección de futuro </b></button>
         </div>
     </div>
 

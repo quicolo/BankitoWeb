@@ -38,8 +38,8 @@ iniciaSesionSegura();
             <i class="fas fa-spell-check fa-2x"></i><span class="w3-xlarge w3-margin-left"> Semántica de la URL</span>
         </header>
         <div class="w3-container">
-            <p>Las URL de esta versión <b>no utilizan carpetas como categorías semánticas</b> por lo que
-            no están optimizadas para buscadores. </p>
+            <p>Las URL de esta versión <b>utiliza solo un nivel de carpetas como categorías semánticas</b> por lo que
+            no están demasiado optimizadas para buscadores. </p>
             <p>No obstante, se ha procurado que los nombres de las
             distintas páginas sean significativos, se ha utilizado el guión como separador de palabras
             y no se usan parámetros GET que dificulten la lectura de la URL. </p>            
