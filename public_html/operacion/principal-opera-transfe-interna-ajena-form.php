@@ -76,8 +76,6 @@ if (!isset($_SESSION['usuario']) or $_SESSION['usuario'] == null) {
         $_SESSION['resultado'] = 'error';
         $_SESSION['errores'] = $errores;
         header('Location: principal-opera-transfe-form?indice=' . $_SESSION['indice']);
-    } else {
-        $_SESSION['resultado'] = 'ok';
     }
 }
 include TEMPLATES_PATH . '/principal-footer.php';

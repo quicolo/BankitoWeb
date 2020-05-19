@@ -5,6 +5,7 @@ include LIBRARY_PATH . '/maneja-sesion.php';
 include LIBRARY_PATH . '/maneja-cuenta.php';
 include LIBRARY_PATH . '/valida-entrada.php';
 include LIBRARY_PATH . '/maneja-operacion.php';
+include LIBRARY_PATH . '/maneja-mensajes-form.php';
 
 iniciaSesionSegura();
 
@@ -44,10 +45,19 @@ if (!isset($_SESSION['usuario']) or $_SESSION['usuario'] == null) {
                 }
             }
         }
+
+        if (isset($errores)) {
+            $_SESSION['resultado'] = 'error';
+            $_SESSION['errores'] = $errores;
+        } else {
+            $_SESSION['resultado'] = 'ok';
+        }
+
     } else {
         cierraSesionSegura();
         header('Location: login-form.php');
     }
+    
     include TEMPLATES_PATH . '/principal-sidebar.php';
     include TEMPLATES_PATH . '/principal-header.php';
 ?>
@@ -61,26 +71,6 @@ if (!isset($_SESSION['usuario']) or $_SESSION['usuario'] == null) {
         </div>
     </div>
     <?php
-    if (isset($errores)) {
-    ?>
-        <div id="errores" class="w3-container">
-            <div class="w3-card w3-black w3-padding">
-                <h1>¡OUPS!</H1>
-                <?php
-                echo implode("<br>", $errores);
-                ?>
-            </div>
-        </div>
-    <?php
-    } else {
-    ?>
-        <div id="resultado" class="w3-container">
-            <div class="w3-card w3-green w3-padding">
-                <h1>Todo ha salido bien...</H1>
-                <p>La transferencia se realizó correctamente.</p>
-            </div>
-        </div>
-<?php
-    }
+    muestraMensajesOperacion(false);
 }
 include TEMPLATES_PATH . '/principal-footer.php';

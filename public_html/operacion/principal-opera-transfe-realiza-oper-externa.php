@@ -5,6 +5,7 @@ include LIBRARY_PATH . '/maneja-sesion.php';
 include LIBRARY_PATH . '/maneja-cuenta.php';
 include LIBRARY_PATH . '/valida-entrada.php';
 include LIBRARY_PATH . '/maneja-operacion.php';
+include LIBRARY_PATH . '/maneja-mensajes-form.php';
 
 iniciaSesionSegura();
 
@@ -16,7 +17,7 @@ if (!isset($_SESSION['usuario']) or $_SESSION['usuario'] == null) {
         $_POST['origen'] and $_POST['cuentaDestino'] and $_POST['concepto'] and
         $_POST['importe'] and $_POST['saldoOrigen'] and isset($_SESSION['cuentas'])
     ) {
-
+        $indice = $_SESSION['indice'];
         $idCuentaOrigen = $_POST['origen'];
         $saldoOrigen = $_POST['saldoOrigen'];
         $numeracionDestino = trim(filter_input(INPUT_POST, 'cuentaDestino', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
@@ -37,6 +38,12 @@ if (!isset($_SESSION['usuario']) or $_SESSION['usuario'] == null) {
                 $errores[] = "Se produjo un error al realizar la transferencia.";
             }
         }
+        if (isset($errores)) {
+            $_SESSION['resultado'] = 'error';
+            $_SESSION['errores'] = $errores;
+        } else {
+            $_SESSION['resultado'] = 'ok';
+        }
         include TEMPLATES_PATH . '/principal-sidebar.php';
         include TEMPLATES_PATH . '/principal-header.php';
 ?>
@@ -49,28 +56,8 @@ if (!isset($_SESSION['usuario']) or $_SESSION['usuario'] == null) {
             <div class="w3-third w3-container">
             </div>
         </div>
-        <?php
-        if (isset($errores)) {
-        ?>
-            <div id="errores" class="w3-container">
-                <div class="w3-card w3-black w3-padding">
-                    <h1>¡OUPS!</H1>
-                    <?php
-                    echo implode("<br>", $errores);
-                    ?>
-                </div>
-            </div>
-        <?php
-        } else {
-        ?>
-            <div id="resultado" class="w3-container">
-                <div class="w3-card w3-green w3-padding">
-                    <h1>Todo ha salido bien...</H1>
-                    <p>La transferencia se realizó correctamente.</p>
-                </div>
-            </div>
 <?php
-        }
+        muestraMensajesOperacion(false);
     } else {
         cierraSesionSegura();
         header('Location: login-form.php');

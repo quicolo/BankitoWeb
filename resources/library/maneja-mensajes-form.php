@@ -11,6 +11,7 @@ function muestraMensajesOperacion($ocultarMsg = true)
   muestraMensajesDefineMensajeOK("La operación se realizó correctamente", $ocultarMsg);
 }
 
+
 function muestraMensajesDefineMensajeOK($mensajeOK, $ocultarMsg = true)
 {
   if (isset($_SESSION['resultado']) && $_SESSION['resultado'] == 'ok') {
@@ -52,6 +53,7 @@ function muestraMensajesDefineMensajeOK($mensajeOK, $ocultarMsg = true)
           <h3>¡OUPS!</H3>
           <?php
           echo implode("<br>", $_SESSION['errores']);
+          unset($_SESSION['errores']);
           ?>
         </div>
 

@@ -3,6 +3,7 @@ require_once '../../resources/config.php';
 include LIBRARY_PATH . '/maneja-base-datos.php';
 include LIBRARY_PATH . '/maneja-sesion.php';
 include LIBRARY_PATH . '/maneja-cuenta.php';
+include LIBRARY_PATH . '/maneja-mensajes-form.php';
 
 iniciaSesionSegura();
 
@@ -19,6 +20,9 @@ if (!isset($_SESSION['usuario']) or $_SESSION['usuario'] == null) {
         $cuentaOrigen = $_SESSION['cuentas'][$indice];
 ?>
         <div class="w3-row">
+            <?php
+            muestraMensajesOperacion();
+            ?>
             <div class="w3-twothird w3-container">
                 <h1 class="w3-text-teal">Transferir a una cuenta externa</h1>
                 <hr>
@@ -64,13 +68,9 @@ if (!isset($_SESSION['usuario']) or $_SESSION['usuario'] == null) {
 <?php
     } else {
         $errores[] = "Fallo en los datos de la sesión.";
-    }
-    if (isset($errores)) {
         $_SESSION['resultado'] = 'error';
         $_SESSION['errores'] = $errores;
-        header('Location: principal-opera-transfe-form?indice=' . $_SESSION['indice']);
-    } else {
-        $_SESSION['resultado'] = 'ok';
+        header('Location: principal-opera-transfe-externa-form.php?indice=' . $indice);
     }
 }
 include TEMPLATES_PATH . '/principal-footer.php';

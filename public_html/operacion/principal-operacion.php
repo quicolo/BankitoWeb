@@ -70,7 +70,7 @@ function muestraCuentaOperac($cuenta, $indice)
       <!-- Tamaño de la imagen 730x120 -->
       <img src="<?= IMAGES_PATH ?>/Banner-cuenta-<?= $indice ?>.png" style="width:100%">
       <div class="w3-display-left w3-padding">
-        <h4 style="text-shadow:1px 1px 0 #444">Cuenta <?= $cuenta['alias'] ?> - <?= number_format($cuenta['saldo'], 2) ?> €</h4>
+        <h4 style="text-shadow:1px 1px 0 #444">Cuenta <?= $cuenta['alias'] ?>: <?= number_format($cuenta['saldo'], 2) ?> €</h4>
       </div>
     </div>
 
